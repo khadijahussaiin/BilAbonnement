@@ -1,0 +1,35 @@
+.body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #215a81;
+    padding: 10px 20px; /* Tilføj padding for luft */
+}
+
+.bilAbonnementBillede {
+    margin: 10px;
+    height: 100px;
+    max-width: 100px; /* Sikrer, at billeder ikke strækker sig ud over deres container */
+}
+
+.banneroverskrift {
+    color: #F9F9F9;
+    flex-grow: 1; /* Tillader overskriften at tage plads */
+    text-align: center; /* Centrerer teksten */
+    margin: 0; /* Fjern margin for at undgå overlapping */
+}
+
+button {
+    margin-left: 15px;
+    padding: 10px;
+    color: #215a81;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px; /* Tilføj en lille runding på knappen */
+}
