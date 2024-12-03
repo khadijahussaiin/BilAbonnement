@@ -1,4 +1,3 @@
-/* Tilføj dette til at fjerne alle margins og paddings fra body */
 body {
     margin: 0;
     padding: 0;
@@ -35,9 +34,13 @@ body {
 h2 {
     text-align: center;
     color: #000; /* Sikrer at teksten er sort */
+    font-weight: bold; /* Gør teksten fed */
+}
+h4 {
+    text-align: center; /* Centrerer teksten i boksen */
+    color: #000; /* Sikrer at teksten er sort */
     font-weight: normal; /* Fjerner fed skrift */
 }
-
 .logo-img {
     display: block;
     margin: 0 auto;
