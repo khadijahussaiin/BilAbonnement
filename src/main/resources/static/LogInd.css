@@ -1,0 +1,78 @@
+.login-background {
+    background-image: url('Forside.png'); /* Stien til billedet i din "static" mappe */
+    background-size: cover; /* Tilpasser billedet, så det dækker hele baggrunden */
+    background-repeat: no-repeat; /* Forhindrer gentagelse af billedet */
+    background-position: center; /* Placerer billedet centreret på siden */
+    height: 100vh; /* Sikrer, at baggrundsbilledet fylder hele viewport-højden */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+.login-container {
+    position: absolute;
+    left: 20px; /* Placer til venstre, juster værdien efter behov */
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #F9F9F9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    width: 300px;
+}
+
+h2 {
+    text-align: center;
+    color: #000;
+}
+
+.logo-img {
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #0066CC;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button[type="submit"]:hover {
+    background-color: #004C99;
+}
+
+.forgot-password {
+    text-align: center;
+    display: block;
+    margin-top: 10px;
+    color: #0066CC;
+    text-decoration: none;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
