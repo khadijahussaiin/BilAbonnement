@@ -1,29 +1,41 @@
-.login-background {
-    background-image: url('Forside.png'); /* Stien til billedet i din "static" mappe */
-    background-size: cover; /* Tilpasser billedet, så det dækker hele baggrunden */
-    background-repeat: no-repeat; /* Forhindrer gentagelse af billedet */
-    background-position: center; /* Placerer billedet centreret på siden */
-    height: 100vh; /* Sikrer, at baggrundsbilledet fylder hele viewport-højden */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* Tilføj dette til at fjerne alle margins og paddings fra body */
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Sikrer, at ingen scrollbar vises på grund af overskydende hvide områder */
     font-family: Arial, sans-serif;
 }
+
+/* Opdatering til baggrundsstylingen */
+.login-background {
+    background-image: url('Forside.png'); /* Stien til billedet i din "static" mappe */
+    background-size: cover; /* Gør, at billedet dækker hele baggrunden uden hvide kanter */
+    background-repeat: no-repeat; /* Forhindrer gentagelse af billedet */
+    background-position: center; /* Placerer billedet centreret på siden */
+    width: 100vw; /* Gør baggrunden lige så bred som viewporten */
+    height: 100vh; /* Gør baggrunden lige så høj som viewporten */
+    display: flex;
+    justify-content: center; /* Centrerer login-containeren på siden */
+    align-items: center;
+}
+
+/* Justering af login-container */
 .login-container {
-    position: absolute;
-    left: 20px; /* Placer til venstre, juster værdien efter behov */
-    top: 50%;
-    transform: translateY(-50%);
+    position: relative;
+    left: 150px; /* Juster denne værdi for at placere login-boksen korrekt i forhold til prototypen */
     background-color: #F9F9F9;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
-    width: 300px;
+    height: 500px;
+    width: 450px;
+    margin-left: 30rem;
 }
 
 h2 {
     text-align: center;
-    color: #000;
+    color: #000; /* Sikrer at teksten er sort */
+    font-weight: normal; /* Fjerner fed skrift */
 }
 
 .logo-img {
