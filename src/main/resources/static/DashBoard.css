@@ -3,21 +3,3 @@
     padding: 0;
     width: 100%;
 }
-
-.banner1 {
-    background-color: #215a81;
-    width: 100%;
-    display: flex;
-    align-items: center;
-}
-
-.banneroverskrift1 {
-    margin-right: 30%;
-    margin-left: 30%;
-    color: #F9F9F9;
-}
-
-.bilAbonnementBillede1 {
-    margin: 10px;
-    height: 100px;
-}

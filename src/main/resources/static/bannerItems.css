@@ -6,6 +6,7 @@ body {
     font-family: Arial, sans-serif;
 }
 
+/* Banner */
 /* CSS-klasser */
 .banner {
     display: flex;
@@ -28,6 +29,7 @@ body {
     flex-grow: 1; /* Tillader overskriften at tage plads */
     text-align: center; /* Centrerer teksten */
     margin: 0; /* Fjern margin for at undgå overlapping */
+    margin-right: 0px;
 }
 
 .profilBillede {

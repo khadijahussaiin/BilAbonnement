@@ -3,11 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="/bannerItems.css">
-    <title>Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="/sidebarItems.css">
+    <title>Title</title>
 </head>
 <body>
     <div>
-        <div th:replace="home/fragments/banner :: banner"></div>
+        <!-- Banner -->
+        <div th:replace="home/fragments/bannersidebar :: banner"></div>
+
+        <!-- Menu Ikon og Dropdown -->
+        <div th:replace="home/fragments/bannersidebar :: menu-icon"></div>
+    </div>
+    <div>
+        <div>
+            <!-- opslagene -->
+        </div>
+        <div>
+            <!-- Kalender -->
+        </div>
     </div>
 </body>
 </html>

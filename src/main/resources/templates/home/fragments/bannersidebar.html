@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>banner</title>
+    <link rel="stylesheet" type="text/css" href="/bannerItems.css">
+    <link rel="stylesheet" type="text/css" href="/sidebarItems.css">
+</head>
+<body>
+
+    <div th:fragment="banner" class="banner">
+        <a href="/"><img class="bilAbonnementBillede" src="/BILABONNEMENT-LOGO.png"></a>
+        <h1 class="banneroverskrift">Dashboard  </h1>
+        <!-- TODO herunder "/" skal ændres til at det går til profilens side. -->
+        <a href="/"><img class="profilBillede" src="/profilIconPicture.png"></a>
+        <button class="button"> Log ud </button>
+    </div>
+
+    <div th:fragment="menu-icon" class="menu-icon">
+        <div class="menu-button">☰ Menu</div>
+        <div class="dropdown-content">
+            <div class="dropdown-item">
+                <div class="dropdown-button">Dropdown 1</div>
+                <div class="sub-dropdown-content">
+                    <a href="/link1-1">Link 1-1</a>
+                    <a href="/link1-2">Link 1-2</a>
+                    <a href="/link1-3">Link 1-3</a>
+                </div>
+            </div>
+            <div class="dropdown-item">
+                <div class="dropdown-button">Dropdown 2</div>
+                <div class="sub-dropdown-content">
+                    <a href="/link2-1">Link 2-1</a>
+                    <a href="/link2-2">Link 2-2</a>
+                    <a href="/link2-3">Link 2-3</a>
+                </div>
+            </div>
+            <div class="dropdown-item">
+                <div class="dropdown-button">Dropdown 3</div>
+                <div class="sub-dropdown-content">
+                    <a href="/link3-1">Link 3-1</a>
+                    <a href="/link3-2">Link 3-2</a>
+                    <a href="/link3-3">Link 3-3</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div th:fragment="sidebar" class="sidebar">
+        <ul>
+            <li><a href="/page1">Page 1</a></li>
+            <li><a href="/page2">Page 2</a></li>
+            <li><a href="/page3">Page 3</a></li>
+        </ul>
+    </div>
+
+</body>
+</html>
