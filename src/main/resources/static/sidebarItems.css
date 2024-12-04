@@ -32,7 +32,7 @@
 .menu-icon {
     position: relative;
     display: inline-block;
-    transition: all 0.3s ease; /* Tilføj overgangseffekt */
+    transition: width 0.3s ease, height 0.3s ease; /* Tilføj overgang for størrelse */
 }
 
 .menu-button {
@@ -40,25 +40,26 @@
     color: white;
     padding: 15px;
     font-size: 30px;
-    margin-top: 10px;
-    margin-left: 10px;
     border: none;
     cursor: pointer;
     border-radius: 5px;
     display: inline-block;
-    transition: all 0.3s ease; /* Tilføj overgangseffekt */
+    width: 50px; /* Startbredde */
+    height: 50px; /* Starthøjde */
+    transition: background-color 0.3s ease; /* Overgang for baggrundsfarve */
 }
 
 .dropdown-content {
     display: none;
     position: absolute;
     background-color: #f9f9f9;
-    width: 250px; /* Startbredde */
+    top: 100%; /* Placer lige under menu-knappen */
+    left: 0;
+    width: 300px; /* Udvidet bredde */
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 10;
-    padding: 10px;
+    padding: 20px;
     border-radius: 5px;
-    transition: all 0.3s ease; /* Tilføj overgangseffekt */
 }
 
 .dropdown-item {
@@ -83,10 +84,7 @@
     background-color: #e0e0e0;
     padding: 5px;
     margin-top: 5px;
-    position: absolute;
-    left: 100%;
-    top: 0;
-    min-width: 160px;
+    position: relative;
     z-index: 11;
     box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.1);
     border-radius: 5px;
@@ -103,16 +101,14 @@
     background-color: #ccc;
 }
 
-.menu-icon:hover .dropdown-content {
-    display: block;
-    width: 300px; /* Udvid bredden af dropdown-boksen */
-    height: auto; /* Tillad boksen at tilpasse sig indholdet */
-    padding: 20px; /* Øg padding for at give mere plads */
+.menu-icon:hover .menu-button {
+    width: 300px; /* Udvid bredden ved hover */
+    height: auto; /* Juster højden ved hover */
+    background-color: #215A81; /* Ændre baggrundsfarve ved hover */
 }
 
-.menu-icon:hover .menu-button {
-    width: 300px; /* Udvid bredden af menu-knappen */
-    height: 50px; /* Øg højden af menu-knappen */
+.menu-icon:hover .dropdown-content {
+    display: block;
 }
 
 .dropdown-item:hover .sub-dropdown-content {
