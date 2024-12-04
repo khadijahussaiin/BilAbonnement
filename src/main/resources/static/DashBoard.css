@@ -1,23 +1,23 @@
-.bodyDashboard {
+.bodyDashboard1 {
     margin: 0;
     padding: 0;
     width: 100%;
 }
 
-.banner {
+.banner1 {
     background-color: #215a81;
     width: 100%;
     display: flex;
     align-items: center;
 }
 
-.banneroverskrift {
+.banneroverskrift1 {
     margin-right: 30%;
     margin-left: 30%;
     color: #F9F9F9;
 }
 
-.bilAbonnementBillede {
+.bilAbonnementBillede1 {
     margin: 10px;
     height: 100px;
 }
