@@ -1,35 +1,51 @@
-.body {
+/* Ikke CSS-klasser */
+body {
     margin: 0;
+    padding: 0;
+    width: 100%;
     font-family: Arial, sans-serif;
 }
 
+/* CSS-klasser */
 .banner {
     display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: #215a81;
     padding: 10px 20px; /* Tilføj padding for luft */
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .bilAbonnementBillede {
     margin: 10px;
-    height: 100px;
-    max-width: 100px; /* Sikrer, at billeder ikke strækker sig ud over deres container */
+    height: 70px;
+    max-width: 300px; /* Sikrer, at billeder ikke strækker sig ud over deres container */
 }
 
 .banneroverskrift {
-    color: #F9F9F9;
+    color: white;
     flex-grow: 1; /* Tillader overskriften at tage plads */
     text-align: center; /* Centrerer teksten */
     margin: 0; /* Fjern margin for at undgå overlapping */
 }
 
-button {
+.profilBillede {
+    margin: 10px;
+    height: 70px;
+    max-width: 200px; /* Sikrer, at billeder ikke strækker sig ud over deres container */
+}
+
+.button {
     margin-left: 15px;
-    padding: 10px;
-    color: #215a81;
-    background-color: transparent;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-weight: bold;
+    color: white;
+    background-color: #66a6c9;
     border: none;
     cursor: pointer;
-    border-radius: 5px; /* Tilføj en lille runding på knappen */
+    border-radius: 30px; /* Tilføj en lille runding på knappen */
 }
