@@ -30,7 +30,7 @@ public class LogIndController {
             return "redirect:/dashboard"; // Omdiriger til dashboard, hvis login lykkes
         } else {
             model.addAttribute("error", "Ugyldigt brugernavn eller adgangskode.");
-            return "home/LogInd";
+            return "home/LogInd"; // hvis log ind ikke lykkes forbliver man på log ind side og fejlmeddelse dukker op
         }
     }
 }
