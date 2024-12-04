@@ -20,9 +20,8 @@ public class LogIndController {
     }
     @GetMapping("/dashboard")
     public String showLogDashboard() {
-        return "home/Dashboard"; // Dette matcher logind.html i templates/home/
+        return "home/Dashboard"; // Dette matcher Dashboard i templates/home/
     }
-
     @PostMapping("/LogInd")
     public String processLogin(@RequestParam("username") String username, @RequestParam("password") String password, Model model) {
         boolean isValidUser = useradministrationService.validateUser(username, password);
