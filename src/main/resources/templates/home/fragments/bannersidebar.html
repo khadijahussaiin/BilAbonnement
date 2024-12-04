@@ -7,7 +7,6 @@
     <link rel="stylesheet" type="text/css" href="/sidebarItems.css">
 </head>
 <body>
-
     <div th:fragment="banner" class="banner">
         <a href="/"><img class="bilAbonnementBillede" src="/BILABONNEMENT-LOGO.png"></a>
         <h1 class="banneroverskrift">Dashboard  </h1>
@@ -17,6 +16,31 @@
     </div>
 
     <div th:fragment="menu-icon" class="menu-icon">
+        <div class="menu-button">☰ Menu</div>
+        <div class="dropdown-content">
+            <div class="dashboard-link">
+                <img src="/WhiteHouse.png" alt="House Icon" style="width: 40px; height: 40px; margin-right: 8px;">
+                <a href="/dashboard">Dashboard</a>
+            </div>
+            <a href="/link2">Link 2</a>
+            <a href="/link3">Link 3</a>
+            <a href="/link4">Link 4</a>
+            <a href="/link4">Link 5</a>
+            <a href="/link4">Link 6</a>
+            <a href="/link4">Link 7</a>
+            <a href="/link4">Link 8</a>
+            <a href="/link4">Link 9</a>
+            <a href="/link4">Link 10</a>
+            <a href="/link4">Link 11</a>
+            <a href="/link4">Link 12</a>
+            <a href="/link4">Link 13</a>
+            <a href="/link4">Link 14</a>
+            <a href="/link4">Link 15</a>
+        </div>
+    </div>
+
+    <!-- MENU med dobbelt up dropdown - fejler altid med CSS. -->
+<!--    <div th:fragment="menu-icon" class="menu-icon">
         <div class="menu-button">☰ Menu</div>
         <div class="dropdown-content">
             <div class="dropdown-item">
@@ -44,6 +68,6 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>-->
 </body>
 </html>

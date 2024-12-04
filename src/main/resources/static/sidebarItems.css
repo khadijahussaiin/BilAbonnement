@@ -28,89 +28,164 @@
     background-color: #ddd;
 }
 
-/* Menu button */
+
 .menu-icon {
     position: relative;
     display: inline-block;
-    transition: width 0.3s ease, height 0.3s ease; /* Tilføj overgang for størrelse */
+    transition: all 0.3s ease;
+    overflow: hidden;
+    border-radius: 5px;
 }
 
 .menu-button {
     background-color: #66a6c9;
     color: white;
     padding: 15px;
-    font-size: 30px;
+    font-size: 20px;
     border: none;
     cursor: pointer;
-    border-radius: 5px;
-    display: inline-block;
+    display: block;
     width: 50px; /* Startbredde */
     height: 50px; /* Starthøjde */
-    transition: background-color 0.3s ease; /* Overgang for baggrundsfarve */
+    text-align: center;
+    transition: all 0.3s ease;
 }
 
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
-    top: 100%; /* Placer lige under menu-knappen */
+    background-color: #66a5c8;
+    top: 0;
     left: 0;
-    width: 300px; /* Udvidet bredde */
+    width: 200px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 10;
-    padding: 20px;
+    z-index: 1;
     border-radius: 5px;
+    padding-top: 50px; /* For at skubbe linksene ned under menu-knappen */
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
 }
 
-.dropdown-item {
-    margin-bottom: 10px;
-    position: relative;
-}
-
-.dropdown-button {
-    background-color: #66a6c9;
-    color: white;
-    padding: 10px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    display: block;
-    width: 100%;
-}
-
-.sub-dropdown-content {
-    display: none;
-    background-color: #e0e0e0;
-    padding: 5px;
-    margin-top: 5px;
-    position: relative;
-    z-index: 11;
-    box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.1);
-    border-radius: 5px;
-}
-
-.sub-dropdown-content a {
+.dropdown-content a {
     color: black;
-    padding: 5px;
+    padding: 12px 16px;
     text-decoration: none;
     display: block;
+    transition: background-color 0.3s ease;
 }
 
-.sub-dropdown-content a:hover {
-    background-color: #ccc;
+.dropdown-content a:hover, .dashboard-link:hover {
+    background-color: #66a5c8;
 }
 
-.menu-icon:hover .menu-button {
-    width: 300px; /* Udvid bredden ved hover */
-    height: auto; /* Juster højden ved hover */
-    background-color: #215A81; /* Ændre baggrundsfarve ved hover */
+.menu-icon:hover {
+    width: 200px; /* Udvid bredden ved hover */
+    height: 2000px; /* Juster højden ved hover */
 }
 
 .menu-icon:hover .dropdown-content {
     display: block;
+    max-height: 1000px; /* Sørg for at der er plads til alle links */
 }
 
-.dropdown-item:hover .sub-dropdown-content {
-    display: block;
+.dashboard-link {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: black;
 }
+
+.dashboard-link i {
+    margin-right: 8px; /* Tilføjer lidt plads mellem ikonet og teksten */
+}
+
+
+
+/* Menu button (FEJL) */
+/*.menu-icon {*/
+/*    position: relative;*/
+/*    display: inline-block;*/
+/*    transition: width 0.3s ease, height 0.3s ease; !* Tilføj overgang for størrelse *!*/
+/*}*/
+
+/*.menu-button {*/
+/*    background-color: #66a6c9;*/
+/*    color: white;*/
+/*    padding: 15px;*/
+/*    font-size: 30px;*/
+/*    border: none;*/
+/*    cursor: pointer;*/
+/*    border-radius: 5px;*/
+/*    display: inline-block;*/
+/*    width: 50px; !* Startbredde *!*/
+/*    height: 50px; !* Starthøjde *!*/
+/*    transition: background-color 0.3s ease; !* Overgang for baggrundsfarve *!*/
+/*}*/
+
+/*.dropdown-content {*/
+/*    display: none;*/
+/*    position: absolute;*/
+/*    background-color: #f9f9f9;*/
+/*    top: 100%; !* Placer lige under menu-knappen *!*/
+/*    left: 0;*/
+/*    width: 300px; !* Udvidet bredde *!*/
+/*    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);*/
+/*    z-index: 10;*/
+/*    padding: 20px;*/
+/*    border-radius: 5px;*/
+/*}*/
+
+/*.dropdown-item {*/
+/*    margin-bottom: 10px;*/
+/*    position: relative;*/
+/*}*/
+
+/*.dropdown-button {*/
+/*    background-color: #66a6c9;*/
+/*    color: white;*/
+/*    padding: 10px;*/
+/*    font-size: 16px;*/
+/*    border: none;*/
+/*    cursor: pointer;*/
+/*    border-radius: 5px;*/
+/*    display: block;*/
+/*    width: 100%;*/
+/*}*/
+
+/*.sub-dropdown-content {*/
+/*    display: none;*/
+/*    background-color: #e0e0e0;*/
+/*    padding: 5px;*/
+/*    margin-top: 5px;*/
+/*    position: relative;*/
+/*    z-index: 11;*/
+/*    box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.1);*/
+/*    border-radius: 5px;*/
+/*}*/
+
+/*.sub-dropdown-content a {*/
+/*    color: black;*/
+/*    padding: 5px;*/
+/*    text-decoration: none;*/
+/*    display: block;*/
+/*}*/
+
+/*.sub-dropdown-content a:hover {*/
+/*    background-color: #ccc;*/
+/*}*/
+
+/*.menu-icon:hover .menu-button {*/
+/*    width: 300px; !* Udvid bredden ved hover *!*/
+/*    height: auto; !* Juster højden ved hover *!*/
+/*    background-color: #215A81; !* Ændre baggrundsfarve ved hover *!*/
+/*}*/
+
+/*.menu-icon:hover .dropdown-content {*/
+/*    display: block;*/
+/*}*/
+
+/*.dropdown-item:hover .sub-dropdown-content {*/
+/*    display: block;*/
+/*}*/
