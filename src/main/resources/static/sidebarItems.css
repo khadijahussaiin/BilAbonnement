@@ -32,12 +32,16 @@
 .menu-icon {
     position: relative;
     display: inline-block;
+    transition: all 0.3s ease; /* Tilføj glidende overgang */
 }
 
 .menu-button {
-    background-color: #66a6c9;
+    background-color: #215a80;
     color: white;
-    padding: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-right: 60px;
+    padding-left: 15px;
     font-size: 30px;
     margin-top: 10px;
     margin-left: 10px;
@@ -45,16 +49,20 @@
     cursor: pointer;
     border-radius: 5px;
     display: inline-block;
+    transition: all 0.3s ease; /* Tilføj glidende overgang */
 }
 
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
-    width: 200px; /* Juster bredden efter behov */
+    background-color: #215a80;
+    width: 250px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
+    z-index: 10;
     padding: 10px;
+    margin-left: 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease; /* Tilføj glidende overgang */
 }
 
 .dropdown-item {
@@ -63,7 +71,7 @@
 }
 
 .dropdown-button {
-    background-color: #66a6c9;
+    background-color: #215a80;
     color: white;
     padding: 10px;
     font-size: 16px;
@@ -83,6 +91,9 @@
     left: 100%;
     top: 0;
     min-width: 160px;
+    z-index: 11;
+    box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.1);
+    border-radius: 5px;
 }
 
 .sub-dropdown-content a {
@@ -98,8 +109,95 @@
 
 .menu-icon:hover .dropdown-content {
     display: block;
+    width: 300px; /* Udvid bredden af dropdown-boksen */
+    height: auto; /* Tillad boksen at tilpasse sig indholdet */
+    padding: 20px; /* Øg padding for at give mere plads */
+}
+
+.menu-icon:hover .menu-button {
+    width: 300px; /* Udvid bredden af menu-knappen */
+    height: 50px; /* Øg højden af menu-knappen */
 }
 
 .dropdown-item:hover .sub-dropdown-content {
     display: block;
 }
+
+/*.menu-icon {*/
+/*    position: relative;*/
+/*    display: inline-block;*/
+/*}*/
+
+/*.menu-button {*/
+/*    background-color: #215a80;*/
+/*    color: white;*/
+/*    padding: 15px;*/
+/*    font-size: 30px;*/
+/*    margin-top: 10px;*/
+/*    margin-left: 10px;*/
+/*    border: none;*/
+/*    cursor: pointer;*/
+/*    border-radius: 5px;*/
+/*    display: inline-block;*/
+/*}*/
+
+/*.dropdown-content {*/
+/*    display: none;*/
+/*    position: absolute;*/
+/*    background-color: #215a7f;*/
+/*    width: 250px; !* Juster bredden efter behov *!*/
+/*    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);*/
+/*    z-index: 10; !* Sørg for, at dropdown-indholdet er foran andre elementer *!*/
+/*    padding: 10px;*/
+/*    border-radius: 5px;*/
+/*}*/
+
+/*.dropdown-item {*/
+/*    margin-bottom: 10px;*/
+/*    position: relative;*/
+/*}*/
+
+/*.dropdown-button {*/
+/*    background-color: #66a6c9;*/
+/*    color: white;*/
+/*    padding: 10px;*/
+/*    font-size: 16px;*/
+/*    border: none;*/
+/*    cursor: pointer;*/
+/*    border-radius: 5px;*/
+/*    display: block;*/
+/*    width: 100%;*/
+/*}*/
+
+/*.sub-dropdown-content {*/
+/*    display: none;*/
+/*    background-color: #e0e0e0;*/
+/*    padding: 5px;*/
+/*    margin-top: 5px;*/
+/*    position: absolute;*/
+/*    left: 100%;*/
+/*    top: 0;*/
+/*    min-width: 160px;*/
+/*    z-index: 11; !* Sørg for, at sub-dropdown-indholdet vises foran dropdown-content *!*/
+/*    box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.1);*/
+/*    border-radius: 5px;*/
+/*}*/
+
+/*.sub-dropdown-content a {*/
+/*    color: black;*/
+/*    padding: 5px;*/
+/*    text-decoration: none;*/
+/*    display: block;*/
+/*}*/
+
+/*.sub-dropdown-content a:hover {*/
+/*    background-color: #ccc;*/
+/*}*/
+
+/*.menu-icon:hover .dropdown-content {*/
+/*    display: block;*/
+/*}*/
+
+/*.dropdown-item:hover .sub-dropdown-content {*/
+/*    display: block;*/
+/*}*/
