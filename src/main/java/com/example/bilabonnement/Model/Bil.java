@@ -8,7 +8,7 @@ public class Bil {
     private double RegAfgift;
     private double CO2Udledning;
     private String GearType;
-    private byte[] Billede; //Ændret Longblob til byte array. alm. byte kan ikke bruges hvis den skal samarbejde med databasen og thymeleaf
+    private String Billede;
     private Tilstand Tilstand;
 }
 

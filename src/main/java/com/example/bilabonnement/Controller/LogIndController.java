@@ -18,13 +18,17 @@ public class LogIndController {
     public String showLogIndPage() {
         return "home/LogInd"; // Dette matcher logind.html i templates/home/
     }
+    @GetMapping("/dashboard")
+    public String showLogDashboard() {
+        return "home/Dashboard"; // Dette matcher logind.html i templates/home/
+    }
 
     @PostMapping("/LogInd")
     public String processLogin(@RequestParam("username") String username, @RequestParam("password") String password, Model model) {
         boolean isValidUser = useradministrationService.validateUser(username, password);
 
         if (isValidUser) {
-            return "home/Dashboard"; // Omdiriger til dashboard, hvis login lykkes
+            return "redirect:/dashboard"; // Omdiriger til dashboard, hvis login lykkes
         } else {
             model.addAttribute("error", "Ugyldigt brugernavn eller adgangskode.");
             return "home/LogInd";
