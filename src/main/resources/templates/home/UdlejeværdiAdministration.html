@@ -9,7 +9,7 @@
 <body>
 <div>
     <!-- Banner -->
-    <div th:replace="~{home/fragments/bannersidebar :: banner}"></div>
+    <div th:replace="~{home/fragments/bannersidebar :: banner('Aktiv biloversigt og samlet udlejeværdi')}"></div>
 
     <!-- Menu Ikon og Dropdown -->
     <div class="menu-container">
@@ -18,6 +18,9 @@
         <!-- Indhold på højre side -->
         <div class="right-side-content">
             <!-- Her kan du placere mere indhold af sidens elementer. -->
+            <main>
+                <h1>Udleje værdi</h1>
+            </main>
         </div>
     </div>
 </div>
