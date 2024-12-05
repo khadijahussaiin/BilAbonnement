@@ -1,43 +1,68 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="da" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
-  <title>Lejekontrakt Oversigt</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lejekontrakter</title>
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+    th {
+      background-color: #f4f4f4;
+      text-align: left;
+    }
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+    tr:hover {
+      background-color: #ddd;
+    }
+  </style>
 </head>
 <body>
-<h1>Lejekontrakter</h1>
-<div class="lejekontrakter-container">
+<header>
+  <h1>Lejekontrakter</h1>
+</header>
+<main>
   <table>
     <thead>
     <tr>
       <th>Billede</th>
       <th>Lejekontrakt ID</th>
-      <th>Start Dato</th>
-      <th>Slut Dato</th>
-      <th>Pris</th>
-      <th>Vognnummer</th>
-      <th>Kunde Navn</th>
+      <th>Navn</th>
       <th>Email</th>
       <th>Telefon</th>
+      <th>Vognnummer</th>
+      <th>Startdato</th>
+      <th>Slutdato</th>
+      <th>Pris</th>
       <th>Status</th>
     </tr>
     </thead>
     <tbody>
     <tr th:each="lejekontrakt : ${lejekontrakter}">
-      <td><img th:src="@{${lejekontrakt.bil.billede}}" alt="Billede af bil" style="width: 150px; height: 100px;"></td>
+      <td><img th:src="@{${lejekontrakt.billede}}" alt="Billede" style="width:100px;"/></td>
       <td th:text="${lejekontrakt.lejekontraktID}"></td>
+      <td th:text="${lejekontrakt.navn}"></td>
+      <td th:text="${lejekontrakt.email}"></td>
+      <td th:text="${lejekontrakt.telefon}"></td>
+      <td th:text="${lejekontrakt.vognnummer}"></td>
       <td th:text="${lejekontrakt.startDato}"></td>
       <td th:text="${lejekontrakt.slutDato}"></td>
       <td th:text="${lejekontrakt.pris}"></td>
-      <td th:text="${lejekontrakt.vognnummer}"></td>
-      <td th:text="${lejekontrakt.kunde.navn}"></td>
-      <td th:text="${lejekontrakt.kunde.email}"></td>
-      <td th:text="${lejekontrakt.kunde.telefon}"></td>
       <td th:text="${lejekontrakt.statusLK}"></td>
     </tr>
     </tbody>
   </table>
-</div>
+</main>
+<footer>
+  <p>&copy; 2023 Bilabonnement</p>
+</footer>
 </body>
 </html>
-
