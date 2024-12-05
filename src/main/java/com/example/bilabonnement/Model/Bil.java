@@ -9,13 +9,13 @@ public class Bil {
     private double co2Udledning;
     private String gearType;
     private String billede;
-    private Tilstand tilstand;
+    private String tilstand;
 
     // Parameterløs konstruktør
     public Bil() {
     }
 
-    public Bil(String vognnummer, String stelnummer, int model, double staalpris, double regAfgift, double co2Udledning, String gearType, String billede, Tilstand tilstand) {
+    public Bil(String vognnummer, String stelnummer, int model, double staalpris, double regAfgift, double co2Udledning, String gearType, String billede, String tilstand) {
         this.vognnummer = vognnummer;
         this.stelnummer = stelnummer;
         this.model = model;
@@ -96,11 +96,11 @@ public class Bil {
         this.billede = billede;
     }
 
-    public Tilstand getTilstand() {
+    public String getTilstand() {
         return tilstand;
     }
 
-    public void setTilstand(Tilstand tilstand) {
+    public void setTilstand(String tilstand) {
         this.tilstand = tilstand;
 
     }

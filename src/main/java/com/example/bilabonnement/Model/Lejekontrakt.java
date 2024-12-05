@@ -8,12 +8,12 @@ public class Lejekontrakt {
     private LocalDate startDato; //konverter: Bruge LocalDate i stedet for da det passser i java men DATE passer kun i mysql
     private LocalDate slutDato;
     private double pris;
-    private StatusLK statusLK;
+    private String statusLK;
 
     public Lejekontrakt() {
     }
 
-    public Lejekontrakt(int lejekontraktID, String navn, String vognnummer, LocalDate startDato, LocalDate slutDato, double pris, StatusLK statusLK) {
+    public Lejekontrakt(int lejekontraktID, String navn, String vognnummer, LocalDate startDato, LocalDate slutDato, double pris, String statusLK) {
         this.lejekontraktID = lejekontraktID;
         this.navn = navn;
         this.vognnummer = vognnummer;
@@ -59,10 +59,10 @@ public class Lejekontrakt {
     public void setPris(double pris) {
         this.pris = pris;
     }
-    public StatusLK getStatusLK() {
+    public String getStatusLK() {
         return statusLK;
     }
-    public void setStatusLK(StatusLK statusLK) {
+    public void setStatusLK(String statusLK) {
         this.statusLK = statusLK;
     }
 }
