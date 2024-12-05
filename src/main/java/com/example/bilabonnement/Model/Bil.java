@@ -22,6 +22,9 @@ public class Bil {
         this.billede = billede;
         this.tilstand = tilstand;
     }
+    public Bil(String billede){
+        this.billede = billede;
+    }
 
     // Getters and Setters
     public String getVognnummer() {
