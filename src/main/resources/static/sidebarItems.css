@@ -78,10 +78,10 @@
 .dropdown-content a:hover, .dashboard-link:hover {
     background-color: #66a5c8;
 }
-
+/* Størrelse på dropdown boks i forholdet til */
 .menu-icon:hover {
     width: 200px; /* Udvid bredden ved hover */
-    height: 200px; /* Juster højden ved hover */
+    height: 750px; /* Juster højden ved hover */
 }
 
 .menu-icon:hover .dropdown-content {
