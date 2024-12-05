@@ -46,7 +46,7 @@
 }
 
 .menu-button {
-    background-color: #66a6c9;
+    background-color: #215a80;
     color: white;
     padding: 15px;
     font-size: 20px;
@@ -62,7 +62,7 @@
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #66a5c8;
+    background-color: #215a80;
     top: 0;
     left: 0;
     width: 250px; /* Bredden på dropdown boksen, tilpasser for at have hele tekster ind */
@@ -84,18 +84,18 @@
 }
 
 .dropdown-content a:hover, .dashboard-link:hover {
-    background-color: #66a5c8;
+    background-color: #215a80;
 }
 
 /* Størrelse på dropdown boks i forholdet til */
 .menu-icon:hover {
-    width: 250px; /* Udvid bredden ved hover */
+    width: 300px; /* Udvid bredden ved hover (Altså hvor langt man kan have mouse uden at menu ikon bliver lukket ned.*/
     height: 750px; /* Juster højden ved hover */
 }
 
 .menu-icon:hover .dropdown-content {
     display: block;
-    max-width: 1000px;
+    max-width: 1500px;
     max-height: 1000px; /* Sørg for at der er plads til alle links */
 }
 
@@ -128,5 +128,5 @@
 }
 
 .sub-links a:hover {
-    background-color: #ddd;
+    background-color: #66a5c8;
 }
