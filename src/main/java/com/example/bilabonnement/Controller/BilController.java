@@ -5,8 +5,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class BilController {
-    @GetMapping("/Bil")
-    public String ShowBil() {
-        return "home/BilAdministration";
+    @GetMapping("/BilAdministration")
+    public String ShowBil(){
+        return "/home/BilAdministration";
     }
 }
