@@ -1,68 +1,68 @@
 <!DOCTYPE html>
-<html lang="da" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lejekontrakter</title>
-  <style>
-    table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-    th, td {
-      border: 1px solid #ddd;
-      padding: 8px;
-    }
-    th {
-      background-color: #f4f4f4;
-      text-align: left;
-    }
-    tr:nth-child(even) {
-      background-color: #f9f9f9;
-    }
-    tr:hover {
-      background-color: #ddd;
-    }
-  </style>
+  <link rel="stylesheet" type="text/css" href="/bannerItems.css">
+  <link rel="stylesheet" type="text/css" href="/sidebarItems.css">
+  <title>Title</title>
 </head>
 <body>
-<header>
-  <h1>Lejekontrakter</h1>
-</header>
-<main>
-  <table>
-    <thead>
-    <tr>
-      <th>Billede</th>
-      <th>Lejekontrakt ID</th>
-      <th>Navn</th>
-      <th>Email</th>
-      <th>Telefon</th>
-      <th>Vognnummer</th>
-      <th>Startdato</th>
-      <th>Slutdato</th>
-      <th>Pris</th>
-      <th>Status</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="lejekontrakt : ${lejekontrakter}">
-      <td><img th:src="@{${lejekontrakt.billede}}" alt="Billede" style="width:100px;"/></td>
-      <td th:text="${lejekontrakt.lejekontraktID}"></td>
-      <td th:text="${lejekontrakt.navn}"></td>
-      <td th:text="${lejekontrakt.email}"></td>
-      <td th:text="${lejekontrakt.telefon}"></td>
-      <td th:text="${lejekontrakt.vognnummer}"></td>
-      <td th:text="${lejekontrakt.startDato}"></td>
-      <td th:text="${lejekontrakt.slutDato}"></td>
-      <td th:text="${lejekontrakt.pris}"></td>
-      <td th:text="${lejekontrakt.statusLK}"></td>
-    </tr>
-    </tbody>
-  </table>
-</main>
-<footer>
-  <p>&copy; 2023 Bilabonnement</p>
-</footer>
+<div>
+  <!-- Banner -->
+  <div th:replace="~{home/fragments/bannersidebar :: banner}"></div>
+
+  <!-- Menu Ikon og Dropdown -->
+  <div class="menu-container">
+    <div th:replace="~{home/fragments/bannersidebar :: menu-icon}"></div>
+
+    <!-- Indhold på højre side -->
+    <div class="right-side-content">
+      <!-- Her kan du placere mere indhold af sidens elementer. -->
+      <main>
+        <table>
+          <thead>
+          <tr>
+            <th>Billede</th>
+            <th>Lejekontrakt ID</th>
+            <th>Navn</th>
+            <th>Email</th>
+            <th>Telefon</th>
+            <th>Vognnummer</th>
+            <th>Startdato</th>
+            <th>Slutdato</th>
+            <th>Pris</th>
+            <th>Status</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr th:each="lejekontrakt : ${lejekontrakter}">
+            <td><img th:src="@{${lejekontrakt.billede}}" alt="Billede" style="width:100px;"/></td>
+            <td th:text="${lejekontrakt.lejekontraktID}"></td>
+            <td th:text="${lejekontrakt.navn}"></td>
+            <td th:text="${lejekontrakt.email}"></td>
+            <td th:text="${lejekontrakt.telefon}"></td>
+            <td th:text="${lejekontrakt.vognnummer}"></td>
+            <td th:text="${lejekontrakt.startDato}"></td>
+            <td th:text="${lejekontrakt.slutDato}"></td>
+            <td th:text="${lejekontrakt.pris}"></td>
+            <td th:text="${lejekontrakt.statusLK}"></td>
+          </tr>
+          </tbody>
+        </table>
+      </main>
+      <footer>
+        <p>&copy; 2023 Bilabonnement</p>
+      </footer>
+    </div>
+  </div>
+</div>
+<div>
+  <div>
+    <!-- opslagene -->
+  </div>
+  <div>
+    <!-- Kalender -->
+  </div>
+</div>
 </body>
 </html>

@@ -15,23 +15,9 @@ public class LejekontraktController {
     @Autowired
     private LejekontraktService lejekontraktService;
 
-    @GetMapping("/LejekontraktAdministrations")
+    @GetMapping("/LejekontraktAdministration")
     public String lejekontraktAdministration() {
         return "home/LejekontraktAdministration";
-    }
-
-    @GetMapping("/lejekontrakter")
-    public List<Lejekontrakt> getAllLejekontrakter() {
-        return lejekontraktService.getAllLejekontrakter();
-    }
-
-    // Tilføj flere endpoints efter behov
-
-    @GetMapping("/LejekontraktAdministration")
-    public String showLejekontrakt(Model model) {
-        List<Lejekontrakt> lejekontrakter = lejekontraktService.getAllLejekontrakter();
-        model.addAttribute("lejekontrakter", lejekontrakter);
-        return "home/LejekontraktAdministration"; // Dette skal matche navnet på din HTML-fil uden ".html"
     }
 }
 

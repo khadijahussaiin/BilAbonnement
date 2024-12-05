@@ -2,9 +2,32 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Skaderapport Administration</title>
+  <link rel="stylesheet" type="text/css" href="/bannerItems.css">
+  <link rel="stylesheet" type="text/css" href="/sidebarItems.css">
+  <title>Title</title>
 </head>
 <body>
+<div>
+  <!-- Banner -->
+  <div th:replace="~{home/fragments/bannersidebar :: banner}"></div>
 
+  <!-- Menu Ikon og Dropdown -->
+  <div class="menu-container">
+    <div th:replace="~{home/fragments/bannersidebar :: menu-icon}"></div>
+
+    <!-- Indhold på højre side -->
+    <div class="right-side-content">
+      <!-- Her kan du placere mere indhold af sidens elementer. -->
+    </div>
+  </div>
+</div>
+<div>
+  <div>
+    <!-- opslagene -->
+  </div>
+  <div>
+    <!-- Kalender -->
+  </div>
+</div>
 </body>
 </html>
