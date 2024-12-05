@@ -11,6 +11,10 @@ public class Bil {
     private String billede;
     private Tilstand tilstand;
 
+    // Parameterløs konstruktør
+    public Bil() {
+    }
+
     public Bil(String vognnummer, String stelnummer, int model, double staalpris, double regAfgift, double co2Udledning, String gearType, String billede, Tilstand tilstand) {
         this.vognnummer = vognnummer;
         this.stelnummer = stelnummer;
@@ -22,7 +26,8 @@ public class Bil {
         this.billede = billede;
         this.tilstand = tilstand;
     }
-    public Bil(String billede){
+
+    public Bil(String billede) {
         this.billede = billede;
     }
 

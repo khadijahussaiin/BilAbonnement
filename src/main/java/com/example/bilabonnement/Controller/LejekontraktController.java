@@ -1,5 +1,8 @@
 package com.example.bilabonnement.Controller;
 
+import com.example.bilabonnement.Model.Lejekontrakt;
+import com.example.bilabonnement.Service.LejekontraktService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -7,6 +10,17 @@ import java.util.List;
 
 @Controller
 public class LejekontraktController {
+
+    @Autowired
+    private LejekontraktService lejekontraktService;
+
+    @GetMapping("/lejekontrakter")
+    public List<Lejekontrakt> getAllLejekontrakter() {
+        return lejekontraktService.getAllLejekontrakter();
+    }
+
+    // Tilføj flere endpoints efter behov
+
     @GetMapping("/LejekontraktAdministration")
     public String ShowLejekontrakt() {
         return "/home/LejekontraktAdministration";
