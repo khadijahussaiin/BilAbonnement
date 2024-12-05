@@ -17,6 +17,7 @@ public class LejekontraktRepository {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
+    //Metode som viser informationer fra databasen i lejekontrakt administrationen
     public List<Lejekontrakt> fetchAllLejekontrakter() {
         String sql = "SELECT " +
                 "Image.Imageurl, " +
