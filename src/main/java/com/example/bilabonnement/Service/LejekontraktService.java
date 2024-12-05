@@ -1,5 +1,6 @@
 package com.example.bilabonnement.Service;
 
+
 import com.example.bilabonnement.Model.Lejekontrakt;
 import com.example.bilabonnement.Repository.LejekontraktRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,7 @@ public class LejekontraktService {
     private LejekontraktRepository lejekontraktRepository;
 
     public List<Lejekontrakt> getAllLejekontrakter() {
-        return lejekontraktRepository.findAllLejekontrakter();
+        return lejekontraktRepository.fetchAllLejekontrakter();
     }
 }
+

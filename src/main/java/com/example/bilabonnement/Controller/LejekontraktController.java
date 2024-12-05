@@ -16,9 +16,10 @@ public class LejekontraktController {
     private LejekontraktService lejekontraktService;
 
     @GetMapping("/LejekontraktAdministration")
-    public String lejekontraktAdministration() {
-        return "home/LejekontraktAdministration";
+    public String getLejekontrakter(Model model) {
+        List<Lejekontrakt> lejekontrakter = lejekontraktService.getAllLejekontrakter();
+        model.addAttribute("lejekontrakter", lejekontrakter);
+        return "home/LejekontraktAdministration"; // Dette peger på en Thymeleaf-skabelon kaldet lejekontrakter.html
     }
 }
-
 
