@@ -1,33 +1,33 @@
 package com.example.bilabonnement.Model;
 
 public class Kunde {
-    private String Navn;
-    private String Email;
-    private String Telefon;
+    private String navn;
+    private String email;
+    private String telefon;
 
     public Kunde() {
     }
     public Kunde(String navn, String email, String telefon) {
-        this.Navn = navn;
-        this.Email = email;
-        this.Telefon = telefon;
+        this.navn = navn;
+        this.email = email;
+        this.telefon = telefon;
     }
     public String getNavn() {
-        return Navn;
+        return navn;
     }
-    public void setNavn(String Navn) {
-        this.Navn = Navn;
+    public void setNavn(String navn) {
+        this.navn = navn;
     }
     public String getEmail() {
-        return Email;
+        return email;
     }
-    public void setEmail(String Email) {
-        this.Email = Email;
+    public void setEmail(String email) {
+        this.email = email;
     }
     public String getTelefon() {
-        return Telefon;
+        return telefon;
     }
-    public void setTelefon(String Telefon) {
-        this.Telefon = Telefon;
+    public void setTelefon(String telefon) {
+        this.telefon = telefon;
     }
 }

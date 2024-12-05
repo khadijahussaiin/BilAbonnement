@@ -2,56 +2,56 @@ package com.example.bilabonnement.Model;
 
 import java.time.LocalDate;
 public class Lejekontrakt {
-    private int LejekontraktID;
-    private String Navn;
-    private String Vognnummer;
-    private LocalDate StartDato; //konverter: Bruge LocalDate i stedet for da det passser i java men DATE passer kun i mysql
-    private LocalDate SlutDato;
+    private int lejekontraktID;
+    private String navn;
+    private String vognnummer;
+    private LocalDate startDato; //konverter: Bruge LocalDate i stedet for da det passser i java men DATE passer kun i mysql
+    private LocalDate slutDato;
     private double pris;
-    private StatusLK StatusLK;
+    private StatusLK statusLK;
 
     public Lejekontrakt() {
     }
 
-    public Lejekontrakt(int LejekontraktID, String Navn, String Vognnummer, LocalDate StartDato, LocalDate SlutDato, double pris, StatusLK StatusLK) {
-        this.LejekontraktID = LejekontraktID;
-        this.Navn = Navn;
-        this.Vognnummer = Vognnummer;
-        this.StartDato = StartDato;
-        this.SlutDato = SlutDato;
+    public Lejekontrakt(int lejekontraktID, String navn, String vognnummer, LocalDate startDato, LocalDate slutDato, double pris, StatusLK statusLK) {
+        this.lejekontraktID = lejekontraktID;
+        this.navn = navn;
+        this.vognnummer = vognnummer;
+        this.startDato = startDato;
+        this.slutDato = slutDato;
         this.pris = pris;
-        this.StatusLK = StatusLK;
+        this.statusLK = statusLK;
     }
 
     public int getLejekontraktID() {
-        return LejekontraktID;
+        return lejekontraktID;
     }
-    public void setLejekontraktID(int LejekontraktID) {
-        this.LejekontraktID = LejekontraktID;
+    public void setLejekontraktID(int lejekontraktID) {
+        this.lejekontraktID = lejekontraktID;
     }
     public String getNavn() {
-        return Navn;
+        return navn;
     }
-    public void setNavn(String Navn) {
-        this.Navn = Navn;
+    public void setNavn(String navn) {
+        this.navn = navn;
     }
     public String getVognnummer() {
-        return Vognnummer;
+        return vognnummer;
     }
-    public void setVognnummer(String Vognnummer) {
-        this.Vognnummer = Vognnummer;
+    public void setVognnummer(String vognnummer) {
+        this.vognnummer = vognnummer;
     }
     public LocalDate getStartDato() {
-        return StartDato;
+        return startDato;
     }
-    public void setStartDato(LocalDate StartDato) {
-        this.StartDato = StartDato;
+    public void setStartDato(LocalDate startDato) {
+        this.startDato = startDato;
     }
     public LocalDate getSlutDato() {
-        return SlutDato;
+        return slutDato;
     }
-    public void setSlutDato(LocalDate SlutDato){
-        this.SlutDato = SlutDato;
+    public void setSlutDato(LocalDate slutDato){
+        this.slutDato = slutDato;
     }
     public double getPris() {
         return pris;
@@ -60,6 +60,9 @@ public class Lejekontrakt {
         this.pris = pris;
     }
     public StatusLK getStatusLK() {
-        return StatusLK;
+        return statusLK;
+    }
+    public void setStatusLK(StatusLK statusLK) {
+        this.statusLK = statusLK;
     }
 }

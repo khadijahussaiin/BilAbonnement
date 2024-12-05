@@ -98,11 +98,5 @@ public class Bil {
     public void setTilstand(Tilstand tilstand) {
         this.tilstand = tilstand;
 
-
     }
-    @Override
-    public String toString(){
-        return "Vognnummer"+this.vognnummer+"Stelnummer"+this.stelnummer+"Model"+this.model+"Staalpris"+this.staalpris+"RegAfgift"+ this.regAfgift+"Co2Udledning"+this.co2Udledning+"GearType"+this.gearType+"Billede"+this.billede+"Tilstand"+this.tilstand;
-    }
-
 }
