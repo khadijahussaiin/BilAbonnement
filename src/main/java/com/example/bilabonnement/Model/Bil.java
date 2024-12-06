@@ -1,6 +1,7 @@
 package com.example.bilabonnement.Model;
 
 public class Bil {
+
     private String vognnummer;
     private String stelnummer;
     private int model;
@@ -8,30 +9,12 @@ public class Bil {
     private double regAfgift;
     private double co2Udledning;
     private String gearType;
-    private String billede;
-    private String tilstand;
+    private String maerke;
+    private String tilstand; // Tilstanden på bilen  og det er  "Lejeklar", "Udlejet", "Skadet
+    private int tilstandID; // jeg har sat bil TilstandId i  bil model klassen
+    private String billede; // URL til billede af bilen
 
-    // Parameterløs konstruktør
-    public Bil() {
-    }
 
-    public Bil(String vognnummer, String stelnummer, int model, double staalpris, double regAfgift, double co2Udledning, String gearType, String billede, String tilstand) {
-        this.vognnummer = vognnummer;
-        this.stelnummer = stelnummer;
-        this.model = model;
-        this.staalpris = staalpris;
-        this.regAfgift = regAfgift;
-        this.co2Udledning = co2Udledning;
-        this.gearType = gearType;
-        this.billede = billede;
-        this.tilstand = tilstand;
-    }
-
-    public Bil(String billede) {
-        this.billede = billede;
-    }
-
-    // Getters and Setters
     public String getVognnummer() {
         return vognnummer;
     }
@@ -88,12 +71,12 @@ public class Bil {
         this.gearType = gearType;
     }
 
-    public String getBillede() {
-        return billede;
+    public String getMaerke() {
+        return maerke;
     }
 
-    public void setBillede(String billede) {
-        this.billede = billede;
+    public void setMaerke(String maerke) {
+        this.maerke = maerke;
     }
 
     public String getTilstand() {
@@ -102,6 +85,21 @@ public class Bil {
 
     public void setTilstand(String tilstand) {
         this.tilstand = tilstand;
+    }
 
+    public int getTilstandID() {
+        return tilstandID;
+    }
+
+    public void setTilstandID(int tilstandID) {
+        this.tilstandID = tilstandID;
+    }
+
+    public String getBillede() {
+        return billede;
+    }
+
+    public void setBillede(String billede) {
+        this.billede = billede;
     }
 }

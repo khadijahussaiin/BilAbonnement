@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Opret Lejekontrakt</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+  <div class="back-button">
+    <button onclick="window.history.back();">&larr; Tilbage</button>
+  </div>
+
+  <h2>Ny lejekontrakt</h2>
+
+  <form th:action="@{/OpretLejekontrakt}" th:object="${lejekontrakt}" method="post">
+
+    <!-- Start- og slutdato -->
+    <div class="form-group form-group-inline">
+      <div class="form-control">
+        <label for="startDato">starts dato: (yyyy-MM-dd)</label>
+        <input type="date" id="startDato" th:field="*{startDato}" required />
+      </div>
+
+      <div class="form-control">
+        <label for="slutDato">sluts dato: (yyyy-MM-dd)</label>
+        <input type="date" id="slutDato" th:field="*{slutDato}" required />
+      </div>
+    </div>
+
+    <!-- Pris og Vognnummer -->
+    <div class="form-group form-group-inline">
+      <div class="form-control">
+        <label for="pris">pris*</label>
+        <input type="number" id="pris" th:field="*{pris}" step="0.01" required />
+      </div>
+
+      <div class="form-control">
+        <label for="vognnummer">Vognnummer(Bil):*</label>
+        <input type="text" id="vognnummer" th:field="*{vognnummer}" required />
+      </div>
+    </div>
+
+    <div class="form-group form-group-inline">
+      <div class="form-control">
+        <label for="kundeFornavn">Fornavn: *</label>
+        <input type="text" id="kundeFornavn" th:field="*{kundeNavn}" placeholder="Navn" required />
+      </div>
+
+    <div class="form-group form-group-inline">
+      <div class="form-control">
+        <label for="kundeEmail">Email: *</label>
+        <input type="email" id="kundeEmail" th:field="*{kundeEmail}" placeholder="Email" required />
+      </div>
+
+      <div class="form-control">
+        <label for="kundeTelefon">Telefon:*</label>
+        <input type="text" id="kundeTelefon" th:field="*{kundeTelefon}" placeholder="Telefonnummer" required />
+      </div>
+    </div>
+
+    <!-- Status -->
+    <div class="form-group">
+      <label for="status">Status*</label>
+      <div class="status-button">
+        <button id="status" type="button">Aktiv</button>
+      </div>
+    </div>
+
+    <button type="submit">Gem lejekontrakt</button>
+  </form>
+</div>
+
+</body>
+</html>

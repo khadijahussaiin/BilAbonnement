@@ -1,0 +1,54 @@
+/* Generel styling for body og layout */
+body {
+    display: flex;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Sidebar menu */
+.menu-container {
+    width: 250px; /* Fast bredde til sidebar */
+    flex-shrink: 0;
+}
+
+/* Indholdet til højre side */
+.right-side-content {
+    flex-grow: 1;
+    padding: 20px; /* Tilføj lidt afstand til højre indhold */
+    overflow: auto;
+}
+
+/* Styling af tabel */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px; /* Lidt afstand fra andre elementer */
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+/* Styling af knapper */
+.btn-opret, .btn-opdater, .btn-slet {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.btn-slet {
+    background-color: #f44336;
+}
+
+.btn-opret {
+    margin-bottom: 20px; /* Lidt afstand til nedenstående tabel */
+}

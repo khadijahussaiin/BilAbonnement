@@ -1,15 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biladministration</title>
     <link rel="stylesheet" type="text/css" href="/bannerItems.css">
     <link rel="stylesheet" type="text/css" href="/sidebarItems.css">
-    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="/Biladministration.css">
 </head>
 <body>
 <div>
     <!-- Banner -->
-    <div th:replace="~{home/fragments/bannersidebar :: banner('Bil Administration')}"></div>
+    <div th:replace="~{home/fragments/bannersidebar :: banner('Dashboard')}"></div>
 
     <!-- Menu Ikon og Dropdown -->
     <div class="menu-container">
@@ -17,19 +19,42 @@
 
         <!-- Indhold på højre side -->
         <div class="right-side-content">
-            <!-- Her kan du placere mere indhold af sidens elementer. -->
             <main>
-                <h1>Bil Administration</h1>
+                <!-- Søgefelt sektion -->
+                <div class="search-container">
+                    <form action="/search" method="get">
+                        <input type="text" name="vognnummer" placeholder="Søg efter vognnummer..." th:value="${param.vognnummer ?: ''}">
+                        <button type="submit" class="search-btn">Søg</button>
+                    </form>
+                </div>
+
+                <!-- Opret bil-knap -->
+                <div class="add-btn-container">
+                    <a th:href="@{OpretBil}" class="add-btn">Opret ny bil</a>
+                </div>
+
+                <!-- Grid til biler -->
+                <div class="grid-container">
+                    <div class="card" th:each="bil : ${biler}">
+                        <img th:src="${bil.billede ?: '/default-image.jpg'}" alt="Billede af bilen">
+                        <div class="card-content">
+                            <h4 th:text="${bil.maerke ?: 'Ukendt'} + ' (' + (${bil.model ?: 'Ukendt'}) + ')'">Ukendt Bil</h4>
+                            <p><strong>Vognnummer:</strong> <span th:text="${bil.vognnummer ?: 'Ikke angivet'}">Ikke angivet</span></p>
+                            <p><strong>Stelnummer:</strong> <span th:text="${bil.stelnummer ?: 'Ikke angivet'}">Ikke angivet</span></p>
+                            <p><strong>CO2:</strong> <span th:text="${bil.co2Udledning ?: '0'}"></span> g/km</p>
+                            <p><strong>Pris:</strong> <span th:text="${bil.staalpris ?: '0'}"></span> DKK</p>
+                            <p><strong>Registreringsafgift:</strong> <span th:text="${bil.regAfgift ?: '0'}"></span> DKK</p>
+                            <p><strong>Gear:</strong> <span th:text="${bil.gearType ?: 'Ukendt'}">Ukendt</span></p>
+                            <span th:classappend="'status status-' + (${bil.tilstand?.toLowerCase() ?: 'ukendt'})"
+                                  th:text="${bil.tilstand ?: 'Ukendt'}">Ukendt</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Opret Bil-formular -->
+
             </main>
         </div>
-    </div>
-</div>
-<div>
-    <div>
-        <!-- opslagene -->
-    </div>
-    <div>
-        <!-- Kalender -->
     </div>
 </div>
 </body>
