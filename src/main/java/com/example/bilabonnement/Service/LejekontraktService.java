@@ -13,9 +13,13 @@ public class LejekontraktService {
 
     @Autowired
     private LejekontraktRepository lejekontraktRepository;
-
+    //service til at vise alle lejekontrakter
     public List<Lejekontrakt> getAllLejekontrakter() {
         return lejekontraktRepository.fetchAllLejekontrakter();
+    }
+    // Service til at oprette en ny lejekontrakt
+    public void opretLejekontrakt(Lejekontrakt lejekontrakt) {
+        lejekontraktRepository.opretLejekontrakt(lejekontrakt);
     }
 }
 

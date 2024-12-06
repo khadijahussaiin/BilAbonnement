@@ -56,6 +56,21 @@ public class LejekontraktRepository {
             lejekontrakt.setStatus(rs.getString("status"));
             return lejekontrakt;
         }
+    }//Metode til at oprette ny lejekontrakt
+    public void opretLejekontrakt(Lejekontrakt lejekontrakt) {
+        String sql = "INSERT INTO Lejekontrakt (LejekontraktID, StartDato, SlutDato, Pris, Vognnummer, KundeID, StatusID) " +
+                "VALUES (?, ?, ?, ?, ?, ?, ?)";
+
+
+        jdbcTemplate.update(sql,
+                lejekontrakt.getLejekontraktID(),
+                lejekontrakt.getStartDato(),
+                lejekontrakt.getSlutDato(),
+                lejekontrakt.getPris(),
+                lejekontrakt.getVognnummer(),
+                // Assuming kundeID and statusID are already assigned somewhere in the model
+                lejekontrakt.getKundeNavn(),  // Assuming you need to retrieve KundeID based on name or input it directly
+                lejekontrakt.getStatus());
     }
 }
 
