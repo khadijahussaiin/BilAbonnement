@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.time.LocalDate;
+
 @Controller
 public class LogIndController {
 
@@ -19,7 +21,9 @@ public class LogIndController {
         return "home/LogInd"; // Dette matcher logind.html i templates/home/
     }
     @GetMapping("/dashboard")
-    public String showLogDashboard() {
+    public String showLogDashboard(Model model) {
+        LocalDate currentDate = LocalDate.now();
+        model.addAttribute("currentDate", currentDate);
         return "home/Dashboard"; // Dette matcher Dashboard i templates/home/
     }
     @PostMapping("/LogInd")

@@ -17,19 +17,44 @@
 
             <!-- Indhold på højre side -->
             <div class="right-side-content">
+                <!-- Her kan du placere mere indhold af sidens elementer.
+                For at tilføje flere ting ved siden af hver content skal man bruge ny main. -->
                 <main>
-                    <!-- Her ALT indhold skal være i! uden at det forstyrrer Banner og sidebar. -->
+                    <!-- Opslag -->
+                    <section id="opslag1">
+                        <h2>Opslag1</h2>
+                        <!-- Her kan du tilføje dine opslag -->
+                        <p>Dette er et eksempel på et opslag.</p>
+                    </section>
+                    <section id="opslag2">
+                        <h2>Opslag2</h2>
+                        <!-- Her kan du tilføje dine opslag -->
+                        <p>Dette er et eksempel på et opslag.</p>
+                    </section>
                 </main>
                 <!-- Her kan du placere mere indhold af sidens elementer. -->
             </div>
-        </div>
-    </div>
-    <div>
-        <div>
-            <!-- opslagene -->
-        </div>
-        <div>
-            <!-- Kalender -->
+            <div class="left-side-content">
+                <main>
+                    <!-- Kalender -->
+                    <section class="bodyKalender">
+                        <div>
+                            <h2>Kalender</h2>
+                        </div>
+                    </section>
+                    <section class="bodyKalender">
+                        <div class="calendar-container">
+                            <h1 class="head1">Dagens Dato</h1>
+                            <p class="p1" th:text="${currentDate}"></p>
+                        </div>
+                    </section>
+                    <section class="bodyKalender">
+                        <div>
+                            <p>Dette er et eksempel på et Kalender.</p>
+                        </div>
+                    </section>
+                </main>
+            </div>
         </div>
     </div>
 </body>
