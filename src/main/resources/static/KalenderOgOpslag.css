@@ -1,0 +1,31 @@
+.bodyKalender {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: space-between; /* Justerer pladsen mellem elementerne */
+    align-items: center; /* Centrerer elementerne vertikalt */
+    height: auto; /* justerer højde for hver bodyKalender ( */
+    margin: 0;
+    background-color: #f4f4f4;
+}
+
+.calendar-container {
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.head1 {
+    color: #333;
+}
+
+.p1 {
+    font-size: 1.5em;
+    color: #555;
+}
+
+.bodyKalender > div {
+    flex: 1; /* Giver hver div lige meget plads */
+    text-align: center; /* Centrerer tekst i hver div */
+}

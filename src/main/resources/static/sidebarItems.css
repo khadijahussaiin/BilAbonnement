@@ -33,8 +33,14 @@
     align-items: flex-start; /* Juster vertikalt efter behov */
 }
 
+/* Flytter right side content fra menu ikonet */
 .right-side-content {
-    margin-left: 20px;
+    margin-left: 200px;
+}
+
+/* Flytter right side content fra right content */
+.left-side-content {
+    margin-left: 100px;
 }
 
 .menu-icon {
@@ -53,8 +59,8 @@
     border: none;
     cursor: pointer;
     display: block;
-    width: 50px; /* Startbredde */
-    height: 50px; /* Starthøjde */
+    width: 60px; /* Startbredde */
+    height: 60px; /* Starthøjde */
     text-align: center;
     transition: all 0.3s ease;
 }
