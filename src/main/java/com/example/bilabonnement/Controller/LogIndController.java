@@ -24,6 +24,7 @@ public class LogIndController {
     public String showLogDashboard(Model model) {
         LocalDate currentDate = LocalDate.now();
         model.addAttribute("currentDate", currentDate);
+
         return "home/Dashboard"; // Dette matcher Dashboard i templates/home/
     }
     @PostMapping("/LogInd")

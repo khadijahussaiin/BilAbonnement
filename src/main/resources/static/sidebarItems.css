@@ -1,33 +1,3 @@
-.sidebar {
-    width: 200px;
-    background-color: #f4f4f4;
-    padding: 15px;
-    box-sizing: border-box;
-    position: fixed;
-    height: 100%;
-}
-
-.sidebar ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.sidebar li {
-    margin: 10px 0;
-}
-
-.sidebar a {
-    text-decoration: none;
-    color: #333;
-    display: block;
-    padding: 10px;
-    border-radius: 5px;
-}
-
-.sidebar a:hover {
-    background-color: #ddd;
-}
-
 .menu-container {
     display: flex;
     align-items: flex-start; /* Juster vertikalt efter behov */
@@ -35,12 +5,13 @@
 
 /* Flytter right side content fra menu ikonet */
 .right-side-content {
-    margin-left: 200px;
+    margin-left: 5%;
+    max-width: 40%;
 }
 
 /* Flytter right side content fra right content */
 .left-side-content {
-    margin-left: 100px;
+    margin-left: 5%;
 }
 
 .menu-icon {
@@ -48,7 +19,11 @@
     display: inline-block;
     transition: all 0.3s ease;
     overflow: hidden;
-    border-radius: 5px;
+    /* border-radius: 5px; */
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 5px;
 }
 
 .menu-button {
@@ -95,8 +70,8 @@
 
 /* Størrelse på dropdown boks i forholdet til */
 .menu-icon:hover {
-    width: 300px; /* Udvid bredden ved hover (Altså hvor langt man kan have mouse uden at menu ikon bliver lukket ned.*/
-    height: 750px; /* Juster højden ved hover */
+    width: 500px; /* Udvid bredden ved hover (Altså hvor langt man kan have mouse uden at menu ikon bliver lukket ned.*/
+    height: 750px; /* Juster højden ved hover, have plads til hele menu */
 }
 
 .menu-icon:hover .dropdown-content {

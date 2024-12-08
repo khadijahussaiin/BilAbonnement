@@ -1,0 +1,36 @@
+.dashboardOpslag {
+    background-color: #d5e6f0; /* Lys gullig farve */
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 10px; /* Runde hjørner */
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.5); /* Let skygge for dybde */
+    font-family: 'Arial', sans-serif; /* Valgfri skrifttype */
+}
+
+.dashboardOpslag h3 {
+    margin-top: 0;
+    color: #333; /* Mørk farve til overskriften */
+}
+
+.dashboardOpslag p {
+    margin: 5px 0;
+    color: #555; /* Mørkere grå farve til teksten */
+}
+
+.UserBillede {
+    height: 40px;
+    width: 40px;
+    margin-right: 10px;
+}
+
+.centered-content {
+    display: flex;
+    align-items: center;
+}
+
+/*
+Hvis man bruge id istedet for class, så bruge # istedet for . i css.:
+#dashboardOpslag {
+    etc.
+}
+ */
