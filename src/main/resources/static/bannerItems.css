@@ -9,13 +9,15 @@ body {
 /* Banner */
 /* CSS-klasser */
 .banner {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: #215a81;
     padding: 10px 20px; /* Tilføj padding for luft */
-    width: 100%;
+    width: 100vw;
     box-sizing: border-box;
+    z-index: 1000;
 }
 
 .bilAbonnementBillede {
