@@ -11,13 +11,6 @@ body {
     flex-shrink: 0;
 }
 
-/* Indholdet til højre side */
-.right-side-content1 {
-    flex-grow: 1;
-    padding: 20px; /* Tilføj lidt afstand til højre indhold */
-    overflow: auto;
-}
-
 /* Styling af tabel */
 table {
     width: 100%;
