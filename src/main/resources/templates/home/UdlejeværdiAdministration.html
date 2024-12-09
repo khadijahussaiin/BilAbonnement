@@ -19,8 +19,26 @@
         <div class="right-side-content">
             <!-- Her kan du placere mere indhold af sidens elementer. -->
             <main>
-                <div><h1>Udleje værdi</h1></div>
-                <div>TABLE HERE!</div>
+                <div>Der er <span th:text="${antalAktive}">0</span> biler som er udlejet og har i alt <span th:text="${sumAfPriser}">0</span> DKK</div>
+                <div>
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>Aktivt udlejet</th>
+                            <th>Vognnummer</th>
+                            <th>Beløb i alt</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="info : ${lejekontrakter}" th:if="${info.status} == 'Aktiv'">
+                            <td th:text="${info.startDato}"></td>
+                            <td th:text="${info.slutDato}"></td>
+                            <td th:text="${info.vognnummer}"></td>
+                            <td th:text="${info.pris}"></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
             </main>
         </div>
     </div>
