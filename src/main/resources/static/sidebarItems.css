@@ -45,7 +45,12 @@
 }
 
 .menu-icon {
-    position: relative;
+    position: fixed; /* Dette gør at ikon er over alt i siden. */
+    top: 110px; /* flytter ikonet fra toppen på siden. Så det er sat på plads korrekt */
+    left: 0; /* Sat på venstre side af siden. */
+    height: 90px;
+    width: 90px;
+
     display: inline-block;
     transition: all 0.3s ease;
     overflow: hidden;
@@ -64,8 +69,9 @@
     border: none;
     cursor: pointer;
     display: block;
-    width: 60px; /* Startbredde */
-    height: 60px; /* Starthøjde */
+    border-bottom-right-radius: 5px;
+    width: 60px; /* Startbredde, også teksten centerer sig i denne. */
+    height: 60px; /* Starthøjde, teksten centerer sig i denne */
     text-align: center;
     transition: all 0.3s ease;
 }

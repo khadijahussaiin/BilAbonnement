@@ -7,7 +7,7 @@ body {
 
 /* Opdatering til baggrundsstylingen */
 .login-background {
-    background-image: url('Forside.png'); /* Stien til billedet i din "static" mappe */
+    background-image: url('Pictures/Forside.png'); /* Stien til billedet i din "static" mappe */
     background-size: cover; /* Gør, at billedet dækker hele baggrunden uden hvide kanter */
     background-repeat: no-repeat; /* Forhindrer gentagelse af billedet */
     background-position: center; /* Placerer billedet centreret på siden */

@@ -9,7 +9,7 @@ body {
 /* Banner */
 /* CSS-klasser */
 .banner {
-    position: relative;
+    position: static;
     display: flex;
     align-items: center;
     justify-content: space-between;

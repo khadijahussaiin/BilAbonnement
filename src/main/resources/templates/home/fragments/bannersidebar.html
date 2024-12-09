@@ -2,15 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>banner</title>
     <link rel="stylesheet" type="text/css" href="/bannerItems.css">
     <link rel="stylesheet" type="text/css" href="/sidebarItems.css">
 </head>
 <body>
     <div th:fragment="banner(title)" class="banner">
-        <a href="/"><img class="bilAbonnementBillede" src="/BILABONNEMENT-LOGO.png"></a>
+        <a href="/"><img class="bilAbonnementBillede" src="/Pictures/BILABONNEMENT-LOGO.png"></a>
         <h1 class="banneroverskrift" th:text="${title}">Default Title</h1>
-        <a href="/"><img class="profilBillede" src="/profilIconPicture.png"></a>
+        <a href="/"><img class="profilBillede" src="/Pictures/profilIconPicture.png"></a>
         <a th:href="@{/}"><button class="button">Log ud</button></a>
     </div>
 
@@ -20,7 +21,7 @@
 
             <div class="dashboard-link">
                 <div class="main-link-container">
-                    <img src="/WhiteHouse.png" alt="House Icon" style="width: 40px; height: 40px; margin-right: 4px; margin-left: -7px;">
+                    <img src="/Pictures/WhiteHouse.png" alt="House Icon" style="width: 40px; height: 40px; margin-right: 4px; margin-left: -7px;">
                     <a class="main-link" style="font-size: larger; color: white" href="/dashboard">Dashboard</a>
                 </div>
             </div>
@@ -28,7 +29,7 @@
 
             <div class="dashboard-link">
                 <div class="main-link-container">
-                    <img src="/noteIcon.png" alt="Note Icon" style="width: 40px; height: 40px; margin-right: -2px;">
+                    <img src="/Pictures/noteIcon.png" alt="Note Icon" style="width: 40px; height: 40px; margin-right: -2px;">
                     <a class="main-link" style="font-size: larger; color: white">Dataregistering</a>
                 </div>
                 <div class="sub-links">
@@ -40,7 +41,7 @@
 
             <div class="dashboard-link">
                 <div class="main-link-container">
-                    <img src="/wrench.png" alt="Wrench Icon" style="width: 40px; height: 40px; margin-right: 0;">
+                    <img src="/Pictures/wrench.png" alt="Wrench Icon" style="width: 40px; height: 40px; margin-right: 0;">
                     <a class="main-link" style="font-size: larger; color: white">Skade & Udbedring</a>
                 </div>
                 <div class="sub-links">
@@ -51,7 +52,7 @@
 
             <div class="dashboard-link">
                 <div class="main-link-container">
-                    <img src="/MoneyBag.png" alt="MoneyBag Icon" style="width: 40px; height: 40px; margin-right: 10px;">
+                    <img src="/Pictures/MoneyBag.png" alt="MoneyBag Icon" style="width: 40px; height: 40px; margin-right: 10px;">
                     <a class="main-link" style="font-size: larger; color: white">Forretningsudvikler</a>
                 </div>
                 <div class="sub-links">
