@@ -45,20 +45,7 @@
 }
 
 .menu-icon {
-    position: fixed; /* Dette gør at ikon er over alt i siden. */
-    top: 110px; /* flytter ikonet fra toppen på siden. Så det er sat på plads korrekt */
-    left: 0; /* Sat på venstre side af siden. */
-    height: 90px;
-    width: 90px;
-
-    display: inline-block;
-    transition: all 0.3s ease;
-    overflow: hidden;
-    /* border-radius: 5px; */
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 5px;
+    position: relative; /* Gør det muligt for dropdown-indholdet at blive placeret i forhold til menu-ikonet */
 }
 
 .menu-button {
@@ -66,34 +53,30 @@
     color: white;
     padding: 15px;
     font-size: 20px;
-    border: none;
-    cursor: pointer;
-    display: block;
     border-bottom-right-radius: 5px;
-    width: 60px; /* Startbredde, også teksten centerer sig i denne. */
-    height: 60px; /* Starthøjde, teksten centerer sig i denne */
+    cursor: pointer;
     text-align: center;
-    transition: all 0.3s ease;
 }
 
 .dropdown-content {
     display: none;
     position: absolute;
     background-color: #215a80;
-    top: 0;
+    top: 0%; /* Placer dropdown under menu-knappen */
     left: 0;
-    width: 250px; /* Bredden på dropdown boksen, tilpasser for at have hele tekster ind */
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    min-width: 250px;
+    /*box-shadow: 8px 8px 0px rgba(0, 0, 0, 1);*/
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,1);
     z-index: 1;
-    border-radius: 5px;
-    padding-top: 50px; /* For at skubbe linksene ned under menu-knappen */
+    border-bottom-right-radius: 5px;
+    padding-top: 10px;
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease;
+    transition: max-height 0.3s ease, display 0.3s ease;
 }
 
 .dropdown-content a {
-    color: black;
+    color: white;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
@@ -106,14 +89,13 @@
 
 /* Størrelse på dropdown boks i forholdet til */
 .menu-icon:hover {
-    width: 500px; /* Udvid bredden ved hover (Altså hvor langt man kan have mouse uden at menu ikon bliver lukket ned.*/
+    width: 80px; /* Udvid bredden ved hover (Altså hvor langt man kan have mouse uden at menu ikon bliver lukket ned.*/
     height: 750px; /* Juster højden ved hover, have plads til hele menu */
 }
 
 .menu-icon:hover .dropdown-content {
     display: block;
-    max-width: 1500px;
-    max-height: 1000px; /* Sørg for at der er plads til alle links */
+    max-height: 750px; /* Juster denne værdi for at sikre, at hele indholdet vises */
 }
 
 .dashboard-link {
