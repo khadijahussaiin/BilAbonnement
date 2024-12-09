@@ -6,13 +6,13 @@ body {
 }
 
 /* Sidebar menu */
-.menu-container {
+.menu-container1 {
     width: 250px; /* Fast bredde til sidebar */
     flex-shrink: 0;
 }
 
 /* Indholdet til højre side */
-.right-side-content {
+.right-side-content1 {
     flex-grow: 1;
     padding: 20px; /* Tilføj lidt afstand til højre indhold */
     overflow: auto;
