@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Opret Bil</title>
+</head>
+<body>
+<h1>Opret Ny Bil</h1>
+<form action="/opretBil" method="post">
+    <label for="vognnummer">Vognnummer:</label>
+    <input type="text" id="vognnummer" name="vognnummer" required><br>
+
+    <label for="maerke">Mærke:</label>
+    <input type="text" id="maerke" name="maerke" required><br>
+
+    <label for="stelnummer">Stelnummer:</label>
+    <input type="text" id="stelnummer" name="stelnummer" required><br>
+
+    <label for="model">Model:</label>
+    <input type="number" id="model" name="model" required><br>
+
+    <label for="staalpris">Stålpris:</label>
+    <input type="number" id="staalpris" name="staalpris" step="0.01" required><br>
+
+    <label for="regAfgift">Registreringsafgift:</label>
+    <input type="number" id="regAfgift" name="regAfgift" step="0.01" required><br>
+
+    <label for="co2Udledning">CO2 Udledning:</label>
+    <input type="number" id="co2Udledning" name="co2Udledning" step="0.01" required><br>
+
+    <label for="gearType">Gear Type:</label>
+    <input type="text" id="gearType" name="gearType" required><br>
+
+    <label for="tilstandID">Tilstand:</label>
+    <select id="tilstandID" name="tilstandID" required>
+        <option value="1">Lejeklar</option>
+        <option value="2">Udlejet</option>
+        <option value="3">Skadet</option>
+    </select><br>
+
+    <label for="imageUrl">Image URL:</label>
+    <input type="url" id="imageUrl" name="imageUrl" required><br>
+
+    <button type="submit">Gem</button>
+</form>
+</body>
+</html>

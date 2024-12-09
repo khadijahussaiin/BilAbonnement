@@ -1,63 +1,73 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lejekontrakt Administration</title>
     <link rel="stylesheet" type="text/css" href="/bannerItems.css">
     <link rel="stylesheet" type="text/css" href="/sidebarItems.css">
-    <title>Title</title>
 </head>
 <body>
-
 <div>
-    <!-- Banner Her skal der stå Lejekontrakt Administration-->
-    <div th:replace="~{home/fragments/bannersidebar :: banner('Lejekontrakt Administration')}"></div>
-</div>
-<!-- Menu Ikon og Dropdown -->
-<div class="menu-container">
-    <div th:replace="~{home/fragments/bannersidebar :: menu-icon}"></div>
+    <!-- Banner -->
+    <div th:replace="~{home/fragments/bannersidebar :: banner('Lejekontrakt Administation')}"></div>
 
-    <!-- Indhold på højre side -->
-    <div class="right-side-content">
-        <!-- Her kan du placere mere indhold af sidens elementer. -->
-        <main>
-            <a th:href="@{/OpretLejekontrakt}" class="btn-opret">Opret ny lejekontrakt</a>
-            <table>
-                <thead>
-                <tr>
-                    <th>Billede</th>
-                    <th>ID</th>
-                    <th>Start Dato</th>
-                    <th>Slut Dato</th>
-                    <th>Pris</th>
-                    <th>Vognnummer</th>
-                    <th>Navn</th>
-                    <th>Email</th>
-                    <th>Telefon</th>
-                    <th>Status</th>
-                    <th>Handling</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr th:each="lejekontrakt : ${lejekontrakter}">
-                    <td><img th:src="${lejekontrakt.imageurl}" alt="Billede" width="200"/></td>
-                    <td th:text="${lejekontrakt.lejekontraktID}"></td>
-                    <td th:text="${lejekontrakt.startDato}"></td>
-                    <td th:text="${lejekontrakt.slutDato}"></td>
-                    <td th:text="${lejekontrakt.pris}"></td>
-                    <td th:text="${lejekontrakt.vognnummer}"></td>
-                    <td th:text="${lejekontrakt.kundeNavn}"></td>
-                    <td th:text="${lejekontrakt.kundeEmail}"></td>
-                    <td th:text="${lejekontrakt.kundeTelefon}"></td>
-                    <td th:text="${lejekontrakt.status}"></td>
-                    <td>
-                        <button type="button" class="btn-opdater">Opdater</button>
-                        <button type="button" class="btn-slet">Slet</button>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-        </main>
-        <!-- Her kan du placere mere indhold af sidens elementer. -->
+    <!-- Menu Ikon og Dropdown -->
+    <div class="menu-container">
+        <div th:replace="~{home/fragments/bannersidebar :: menu-icon}"></div>
+
+        <!-- Indhold på højre side -->
+        <div class="right-side-content">
+            <main>
+                <form action="/soegLejekontrakter" method="get">
+                    <label for="soegeord">Søg:</label>
+                    <input type="text" id="soegeord" name="soegeord" placeholder="Indtast ID, vognnummer, navn eller status">
+                    <button type="submit">Søg</button>
+                </form>
+
+                <a th:href="@{/OpretLejekontrakt}" class="btn-opret">Opret ny Lejekontrakt</a>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Billede</th>
+                        <th>Lejekontrakt ID</th>
+                        <th>Start Dato</th>
+                        <th>Slut Dato</th>
+                        <th>Pris</th>
+                        <th>Vognnummer</th>
+                        <th>Navn</th>
+                        <th>Email</th>
+                        <th>Telefon</th>
+                        <th>Status</th>
+                        <th>Handling</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="lejekontrakt : ${lejekontrakter}">
+                        <td><img th:src="${lejekontrakt.imageurl}" alt="Billede" width="100"></td>
+                        <td th:text="${lejekontrakt.lejekontraktID}"></td>
+                        <td th:text="${lejekontrakt.startDato}"></td>
+                        <td th:text="${lejekontrakt.slutDato}"></td>
+                        <td th:text="${lejekontrakt.pris}"></td>
+                        <td th:text="${lejekontrakt.vognnummer}"></td>
+                        <td th:text="${lejekontrakt.navn}"></td>
+                        <td th:text="${lejekontrakt.email}"></td>
+                        <td th:text="${lejekontrakt.telefon}"></td>
+                        <td th:text="${lejekontrakt.status}"></td>
+                        <td>
+                            <a th:href="@{'/opdaterLejekontrakt/' + ${lejekontrakt.lejekontraktID}}">
+                                <button type="button">Opdater</button>
+                            </a>
+                            <a th:href="@{'/sletLejekontrakt/' + ${lejekontrakt.lejekontraktID}}" onclick="return confirm('Er du sikker på, at du vil slette denne lejekontrakt? \n'+
+                            'Denne handling kan ikke fortrydes.');">
+                                <button type="button" class="btn-slet">Slet</button>
+                            </a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </main>
+        </div>
     </div>
 </div>
 </body>

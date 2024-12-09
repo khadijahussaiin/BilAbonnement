@@ -1,107 +1,70 @@
-/* Søgefelt styling */
-.search-container {
-    display: flex;
-    justify-content: center; /* Centrerer søgefeltet */
-    align-items: center;
-    margin: 20px auto;
-    gap: 10px;
-}
-.search-container input[type="text"] {
-    width: 400px; /* Bredden som i det gamle layout */
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-}
-.search-container .search-btn {
-    padding: 10px 25px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-}
-.search-container .search-btn:hover {
-    background-color: #0056b3;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
-/* Opret bil-knap styling */
-.add-btn-container {
-    display: flex;
-    justify-content: flex-start; /* Venstrestillet knap */
-    margin-left: 50px; /* Indrykning for at matche det gamle layout */
-    margin-bottom: 20px;
-}
-.add-btn {
-    padding: 10px 20px;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    text-decoration: none;
-}
-.add-btn:hover {
-    background-color: #218838;
+body {
+    background-color: #f5f5f5;
+    color: #333;
+    padding: 20px;
 }
 
-/* Grid styling */
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Fire kolonner for biler */
-    gap: 30px; /* Større mellemrum mellem kortene */
-    padding: 20px 50px; /* Mindre indrykning fra siderne */
+header {
+    text-align: center;
+    margin-bottom: 40px;
 }
-.card {
-    background-color: white;
+
+h1 {
+    color: #2c3e50;
+}
+
+.car-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.car-card {
+    background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: transform 0.2s, box-shadow 0.2s;
-    text-align: left; /* Teksten venstrestilles */
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
-.card:hover {
+
+.car-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
-.card img {
+
+.car-image {
     width: 100%;
-    height: 180px; /* Ensartet højde for billeder */
-    object-fit: contain; /* Bevar billedets proportioner */
-    background-color: #f8f9fa; /* Baggrundsfarve for tomme områder */
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
-.card-content {
-    padding: 15px; /* Ekstra padding for bedre udseende */
+
+.car-info {
+    padding: 15px;
 }
-.card-content h4 {
-    margin: 0 0 8px;
-    font-size: 18px; /* Gør overskriften lidt større */
-    color: #343a40;
+
+.car-info h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #34495e;
 }
-.card-content p {
-    margin: 4px 0;
-    color: #555;
-    font-size: 14px; /* Teksten lidt større for læsbarhed */
+
+.car-info p {
+    font-size: 1em;
+    margin: 5px 0;
 }
-.status {
+
+.car-info span {
     font-weight: bold;
-    padding: 5px 10px;
-    border-radius: 5px;
-    display: inline-block;
-    margin-top: 10px;
-}
-.status-lejeklar {
-    background-color: #28a745;
-    color: white;
-}
-.status-udlejet {
-    background-color: #ffc107;
-    color: white;
-}
-.status-skadet {
-    background-color: #dc3545;
-    color: white;
+    color: #2c3e50;
 }

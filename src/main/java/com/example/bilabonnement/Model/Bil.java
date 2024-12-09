@@ -1,26 +1,47 @@
 package com.example.bilabonnement.Model;
 
 public class Bil {
-
     private String vognnummer;
+    private String maerke;
     private String stelnummer;
     private int model;
     private double staalpris;
     private double regAfgift;
     private double co2Udledning;
     private String gearType;
-    private String maerke;
-    private String tilstand; // Tilstanden på bilen  og det er  "Lejeklar", "Udlejet", "Skadet
-    private int tilstandID; // jeg har sat bil TilstandId i  bil model klassen
-    private String billede; // URL til billede af bilen
+    private String tilstandNavn;
+    private String imageurl;
 
+    public Bil(){
+    }
+    public Bil(String vognnummer, String maerke, String stelnummer, int model, double staalpris, double regAfgift, double co2Udledning, String gearType, String tilstandNavn, String imageurl) {
+        this.vognnummer = vognnummer;
+        this.maerke = maerke;
+        this.stelnummer = stelnummer;
+        this.model = model;
+        this.staalpris = staalpris;
+        this.regAfgift = regAfgift;
+        this.co2Udledning = co2Udledning;
+        this.gearType = gearType;
+        this.tilstandNavn = tilstandNavn;
+        this.imageurl = imageurl;
+    }
 
+    // Getters og setters
     public String getVognnummer() {
         return vognnummer;
     }
 
     public void setVognnummer(String vognnummer) {
         this.vognnummer = vognnummer;
+    }
+
+    public String getMaerke() {
+        return maerke;
+    }
+
+    public void setMaerke(String maerke) {
+        this.maerke = maerke;
     }
 
     public String getStelnummer() {
@@ -71,35 +92,17 @@ public class Bil {
         this.gearType = gearType;
     }
 
-    public String getMaerke() {
-        return maerke;
+    public String getTilstandNavn() {
+        return tilstandNavn;
     }
 
-    public void setMaerke(String maerke) {
-        this.maerke = maerke;
+    public void setTilstandNavn(String tilstandNavn) {
+        this.tilstandNavn = tilstandNavn;
     }
-
-    public String getTilstand() {
-        return tilstand;
+    public String getImageurl() {
+        return imageurl;
     }
-
-    public void setTilstand(String tilstand) {
-        this.tilstand = tilstand;
-    }
-
-    public int getTilstandID() {
-        return tilstandID;
-    }
-
-    public void setTilstandID(int tilstandID) {
-        this.tilstandID = tilstandID;
-    }
-
-    public String getBillede() {
-        return billede;
-    }
-
-    public void setBillede(String billede) {
-        this.billede = billede;
+    public void setImageurl(String imageurl) {
+        this.imageurl = imageurl;
     }
 }

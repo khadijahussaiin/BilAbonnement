@@ -13,18 +13,33 @@ public class BilService {
     @Autowired
     private BilRepository bilRepository;
 
-    // Hent alle biler
-    public List<Bil> getAllBiler() {
+    //1. service vis alle biler
+    public List<Bil> findAll() {
         return bilRepository.fetchAllBiler();
     }
-
-    // Søg efter biler via vognnummer -  bare note til det her tilknyttet søg controlleren
-    public List<Bil> searchByVognnummer(String vognnummer) {
-        return bilRepository.searchByVognnummer(vognnummer);
+    //2. opret bil service
+    public void createBil(String vognnummer, String maerke, String stelnummer, int model, Double staalpris,
+                          Double regAfgift, Double co2Udledning, String gearType, int tilstandID, String imageUrl) {
+        bilRepository.saveBil(vognnummer, maerke, stelnummer, model, staalpris, regAfgift, co2Udledning, gearType, tilstandID, imageUrl);
+    }
+    //3. updater biler
+    public Bil getBilByVognnummer(String vognnummer) {
+        return bilRepository.findBilByVognnummer(vognnummer);
     }
 
-    // Tilføjer  ny bil
-    public void addBil(Bil bil) {
-        bilRepository.addBil(bil);
+    public void updateBil(String vognnummer, String maerke, String stelnummer, int model, Double staalpris,
+                          Double regAfgift, Double co2Udledning, String gearType, int tilstandID, String imageUrl) {
+        bilRepository.updateBil(vognnummer, maerke, stelnummer, model, staalpris, regAfgift, co2Udledning, gearType, tilstandID, imageUrl);
+    }
+    //4. Service-metode til at slette en bil
+    public void deleteBil(String vognnummer) {
+        bilRepository.deleteBil(vognnummer);
+    }
+    // Service-metode til søgning af biler
+    public List<Bil> searchBiler(String searchTerm) {
+        return bilRepository.searchBiler(searchTerm);
     }
 }
+
+
+

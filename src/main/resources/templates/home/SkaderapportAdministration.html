@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biladministration</title>
   <link rel="stylesheet" type="text/css" href="/bannerItems.css">
   <link rel="stylesheet" type="text/css" href="/sidebarItems.css">
-  <title>Title</title>
 </head>
 <body>
 <div>
@@ -18,18 +19,47 @@
     <!-- Indhold på højre side -->
     <div class="right-side-content">
       <main>
-        <h1>Skaderapport</h1>
+        <form action="/SøgSkaderapport" method="get">
+          <input type="text" name="searchTerm" placeholder="Søg efter ID, Vognnummer eller Check Af Skade" th:value="${searchTerm}">
+          <button type="submit">Søg</button>
+        </form>
+        <a th:href="@{/opretSkaderapport}" class="btn-opret">Opret ny Skaderapport</a>
+        <table>
+          <thead>
+          <tr>
+            <th>Skade ID</th>
+            <th>Vognnummer</th>
+            <th>Dato</th>
+            <th>Overkørte Kilometer</th>
+            <th>Check Af Skade</th>
+            <th>Skadebeskrivelse</th>
+            <th>Pris I Alt</th>
+            <th>Handling</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr th:each="skaderapport : ${skaderapporter}">
+            <td th:text="${skaderapport.skadeID}"></td>
+            <td th:text="${skaderapport.vognnummer}"></td>
+            <td th:text="${skaderapport.dato}"></td>
+            <td th:text="${skaderapport.overkoerteKilometer}"></td>
+            <td th:text="${skaderapport.checkAfSkade}"></td>
+            <td th:text="${skaderapport.skadeBeskrivelse}"></td>
+            <td th:text="${skaderapport.prisIAlt}"></td>
+            <td>
+              <a th:href="@{'/opdaterSkaderapport/' + ${skaderapport.skadeID}}">
+                <button type="button">Opdater</button>
+              </a>
+              <a th:href="@{'/sletSkaderapport/' + ${skaderapport.skadeID}}" onclick="return confirm('Er du sikker på, at du vil slette denne skaderapport? \n'+
+                            'Denne handling kan ikke fortrydes.');">
+                <button type="button" class="btn-slet">Slet</button>
+              </a>
+            </td>
+          </tr>
+          </tbody>
+        </table>
       </main>
-      <!-- Her kan du placere mere indhold af sidens elementer. -->
     </div>
-  </div>
-</div>
-<div>
-  <div>
-    <!-- opslagene -->
-  </div>
-  <div>
-    <!-- Kalender -->
   </div>
 </div>
 </body>

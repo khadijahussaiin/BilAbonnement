@@ -1,42 +1,34 @@
 package com.example.bilabonnement.Model;
 
-import java.time.LocalDate;
-
 public class Lejekontrakt {
-    private int lejekontraktID;
     private String imageurl;
-    private LocalDate startDato;
-    private LocalDate slutDato;
+    private int lejekontraktID;
+    private String startDato;
+    private String slutDato;
     private double pris;
     private String vognnummer;
-    private String kundeNavn;
-    private String kundeEmail;
-    private String kundeTelefon;
+    private int kundeID;
+    private String navn;
+    private String email;
+    private String telefon;
     private String status;
 
     public Lejekontrakt() {
     }
-    public Lejekontrakt(int lejekontraktID, String imageurl, LocalDate startDato, LocalDate slutDato, double pris, String vognnummer, String kundeNavn, String kundeEmail, String kundeTelefon, String status) {
-        this.lejekontraktID = lejekontraktID;
+    public Lejekontrakt(String imageurl, int lejekontraktID, String startDato, String slutDato, double pris, String vognnummer, int kundeID, String navn, String email, String telefon, String status) {
         this.imageurl = imageurl;
+        this.lejekontraktID = lejekontraktID;
         this.startDato = startDato;
         this.slutDato = slutDato;
         this.pris = pris;
         this.vognnummer = vognnummer;
-        this.kundeNavn = kundeNavn;
-        this.kundeEmail = kundeEmail;
-        this.kundeTelefon = kundeTelefon;
+        this.kundeID = kundeID;
+        this.navn = navn;
+        this.email = email;
+        this.telefon = telefon;
         this.status = status;
     }
-    // Getters and Setters
-    public int getLejekontraktID() {
-        return lejekontraktID;
-    }
-
-    public void setLejekontraktID(int lejekontraktID) {
-        this.lejekontraktID = lejekontraktID;
-    }
-
+    // Getters og Setters
     public String getImageurl() {
         return imageurl;
     }
@@ -45,19 +37,27 @@ public class Lejekontrakt {
         this.imageurl = imageurl;
     }
 
-    public LocalDate getStartDato() {
+    public int getLejekontraktID() {
+        return lejekontraktID;
+    }
+
+    public void setLejekontraktID(int lejekontraktID) {
+        this.lejekontraktID = lejekontraktID;
+    }
+
+    public String getStartDato() {
         return startDato;
     }
 
-    public void setStartDato(LocalDate startDato) {
+    public void setStartDato(String startDato) {
         this.startDato = startDato;
     }
 
-    public LocalDate getSlutDato() {
+    public String getSlutDato() {
         return slutDato;
     }
 
-    public void setSlutDato(LocalDate slutDato) {
+    public void setSlutDato(String slutDato) {
         this.slutDato = slutDato;
     }
 
@@ -76,29 +76,35 @@ public class Lejekontrakt {
     public void setVognnummer(String vognnummer) {
         this.vognnummer = vognnummer;
     }
-
-    public String getKundeNavn() {
-        return kundeNavn;
+    public int getKundeID() { //
+        return kundeID;
     }
 
-    public void setKundeNavn(String kundeNavn) {
-        this.kundeNavn = kundeNavn;
+    public void setKundeID(int kundeID) { //
+        this.kundeID = kundeID;
+    }
+    public String getNavn() {
+        return navn;
     }
 
-    public String getKundeEmail() {
-        return kundeEmail;
+    public void setNavn(String navn) {
+        this.navn = navn;
     }
 
-    public void setKundeEmail(String kundeEmail) {
-        this.kundeEmail = kundeEmail;
+    public String getEmail() {
+        return email;
     }
 
-    public String getKundeTelefon() {
-        return kundeTelefon;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public void setKundeTelefon(String kundeTelefon) {
-        this.kundeTelefon = kundeTelefon;
+    public String getTelefon() {
+        return telefon;
+    }
+
+    public void setTelefon(String telefon) {
+        this.telefon = telefon;
     }
 
     public String getStatus() {

@@ -2,13 +2,10 @@ package com.example.bilabonnement.Repository;
 
 import com.example.bilabonnement.Model.Lejekontrakt;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.time.LocalDate;
 import java.util.List;
 
 @Repository
@@ -16,61 +13,104 @@ public class LejekontraktRepository {
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
-
-    //Metode som viser informationer fra databasen i lejekontrakt administrationen
-    public List<Lejekontrakt> fetchAllLejekontrakter() {
+    //1. Henter alle lejekontrakter
+    public List<Lejekontrakt> fetchAllLejekontraktInfo() {
         String sql = "SELECT " +
-                "Image.Imageurl, " +
-                "Lejekontrakt.LejekontraktID, " +
-                "Lejekontrakt.StartDato, " +
-                "Lejekontrakt.SlutDato, " +
-                "Lejekontrakt.Pris, " +
-                "Lejekontrakt.Vognnummer, " +
-                "Kunde.Navn AS kundeNavn, " +
-                "Kunde.Email AS kundeEmail, " +
-                "Kunde.Telefon AS kundeTelefon, " +
-                "StatusLK.StatusNavn AS status " +
-                "FROM Image " +
-                "INNER JOIN Lejekontrakt ON Image.Vognnummer = Lejekontrakt.Vognnummer " +
-                "INNER JOIN Kunde ON Lejekontrakt.KundeID = Kunde.KundeID " +
-                "INNER JOIN StatusLK ON Lejekontrakt.StatusID = StatusLK.StatusID " +
-                "ORDER BY Lejekontrakt.LejekontraktID";
+                "    Image.Imageurl, " +
+                "    Lejekontrakt.LejekontraktID, " +
+                "    Lejekontrakt.StartDato, " +
+                "    Lejekontrakt.SlutDato, " +
+                "    Lejekontrakt.Pris, " +
+                "    Bil.Vognnummer, " +
+                "    Kunde.Navn, " +
+                "    Kunde.Email, " +
+                "    Kunde.Telefon, " +
+                "    StatusLK.StatusNavn AS Status " +
+                "FROM " +
+                "    Lejekontrakt " +
+                "LEFT JOIN " +
+                "    Bil ON Lejekontrakt.Vognnummer = Bil.Vognnummer " +
+                "LEFT JOIN " +
+                "    Kunde ON Lejekontrakt.KundeID = Kunde.KundeID " +
+                "LEFT JOIN " +
+                "    Image ON Bil.Vognnummer = Image.Vognnummer " +
+                "LEFT JOIN " +
+                "    StatusLK ON Lejekontrakt.StatusID = StatusLK.StatusID";
 
-        return jdbcTemplate.query(sql, new LejekontraktRowMapper());
+        return jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(Lejekontrakt.class));
+    }
+    //2. Opretter en ny lejekontrakt
+    // Metode til at gemme en ny lejekontrakt
+    public void saveLejekontrakt(String startDato, String slutDato, double pris, String vognnummer,
+                                 String navn, String email, String telefon, int statusID) {
+        // Indsæt eller opdater kundeoplysninger
+        String sqlKunde = "INSERT INTO Kunde (Navn, Email, Telefon) " +
+                "VALUES (?, ?, ?) ON DUPLICATE KEY UPDATE Email = VALUES(Email), Telefon = VALUES(Telefon)";
+        jdbcTemplate.update(sqlKunde, navn, email, telefon);
+
+        // Hent KundeID baseret på Navn
+        String sqlKundeID = "SELECT KundeID FROM Kunde WHERE Navn = ? AND Email = ? AND Telefon = ?";
+        int kundeID = jdbcTemplate.queryForObject(sqlKundeID, Integer.class, navn, email, telefon);
+
+        // Indsæt lejekontrakt
+        String sqlLejekontrakt = "INSERT INTO Lejekontrakt (StartDato, SlutDato, Pris, Vognnummer, KundeID, StatusID) " +
+                "VALUES (?, ?, ?, ?, ?, ?)";
+        jdbcTemplate.update(sqlLejekontrakt, startDato, slutDato, pris, vognnummer, kundeID, statusID);
+    }
+    //3. Metode til at opdatere en eksisterende lejekontrakt
+    public void updateLejekontrakt(int lejekontraktID, String startDato, String slutDato, double pris,
+                                   String vognnummer, int kundeID, String navn, String email, String telefon, int statusID) {
+        // Opdater kundeoplysninger
+        String sqlKunde = "UPDATE Kunde SET Navn = ?, Email = ?, Telefon = ? WHERE KundeID = ?";
+        jdbcTemplate.update(sqlKunde, navn, email, telefon, kundeID);
+
+        // Opdater lejekontraktoplysninger
+        String sqlLejekontrakt = "UPDATE Lejekontrakt " +
+                "SET StartDato = ?, SlutDato = ?, Pris = ?, Vognnummer = ?, StatusID = ? " +
+                "WHERE LejekontraktID = ?";
+        jdbcTemplate.update(sqlLejekontrakt, startDato, slutDato, pris, vognnummer, statusID, lejekontraktID);
     }
 
-    // RowMapper implementation
-    private static class LejekontraktRowMapper implements RowMapper<Lejekontrakt> {
-        @Override
-        public Lejekontrakt mapRow(ResultSet rs, int rowNum) throws SQLException {
-            Lejekontrakt lejekontrakt = new Lejekontrakt();
-            lejekontrakt.setLejekontraktID(rs.getInt("LejekontraktID"));
-            lejekontrakt.setImageurl(rs.getString("Imageurl"));
-            lejekontrakt.setStartDato(rs.getDate("StartDato").toLocalDate()); // Conversion to LocalDate
-            lejekontrakt.setSlutDato(rs.getDate("SlutDato").toLocalDate());   // Conversion to LocalDate
-            lejekontrakt.setPris(rs.getDouble("Pris"));
-            lejekontrakt.setVognnummer(rs.getString("Vognnummer"));
-            lejekontrakt.setKundeNavn(rs.getString("kundeNavn"));
-            lejekontrakt.setKundeEmail(rs.getString("kundeEmail"));
-            lejekontrakt.setKundeTelefon(rs.getString("kundeTelefon"));
-            lejekontrakt.setStatus(rs.getString("status"));
-            return lejekontrakt;
-        }
-    }//Metode til at oprette ny lejekontrakt
-    public void opretLejekontrakt(Lejekontrakt lejekontrakt) {
-        String sql = "INSERT INTO Lejekontrakt (LejekontraktID, StartDato, SlutDato, Pris, Vognnummer, KundeID, StatusID) " +
-                "VALUES (?, ?, ?, ?, ?, ?, ?)";
+    // Metode til at hente en enkelt lejekontrakt baseret på ID
+    public Lejekontrakt findLejekontraktById(int lejekontraktID) {
+        String sql = "SELECT " +
+                "    Image.Imageurl, Lejekontrakt.LejekontraktID, Lejekontrakt.StartDato, Lejekontrakt.SlutDato, " +
+                "    Lejekontrakt.Pris, Bil.Vognnummer, Kunde.KundeID, Kunde.Navn, Kunde.Email, Kunde.Telefon, " +
+                "    StatusLK.StatusNavn AS Status " +
+                "FROM Lejekontrakt " +
+                "LEFT JOIN Bil ON Lejekontrakt.Vognnummer = Bil.Vognnummer " +
+                "LEFT JOIN Kunde ON Lejekontrakt.KundeID = Kunde.KundeID " +
+                "LEFT JOIN Image ON Bil.Vognnummer = Image.Vognnummer " +
+                "LEFT JOIN StatusLK ON Lejekontrakt.StatusID = StatusLK.StatusID " +
+                "WHERE Lejekontrakt.LejekontraktID = ?";
+        return jdbcTemplate.queryForObject(sql, new BeanPropertyRowMapper<>(Lejekontrakt.class), lejekontraktID);
+    }
+    //4. slet lejekontrakt
+    public void deleteLejekontrakt(int lejekontraktID) {
+        String sql = "DELETE FROM Lejekontrakt WHERE LejekontraktID = ?";
+        jdbcTemplate.update(sql, lejekontraktID);
+    }
+    //5. Metode til at søge lejekontrakter baseret på ID, vognnummer, navn eller status
+    public List<Lejekontrakt> searchLejekontrakter(String soegeord) {
+        String sql = "SELECT " +
+                "    Image.Imageurl, Lejekontrakt.LejekontraktID, Lejekontrakt.StartDato, Lejekontrakt.SlutDato, " +
+                "    Lejekontrakt.Pris, Bil.Vognnummer, Kunde.Navn, Kunde.Email, Kunde.Telefon, " +
+                "    StatusLK.StatusNavn AS Status " +
+                "FROM Lejekontrakt " +
+                "LEFT JOIN Bil ON Lejekontrakt.Vognnummer = Bil.Vognnummer " +
+                "LEFT JOIN Kunde ON Lejekontrakt.KundeID = Kunde.KundeID " +
+                "LEFT JOIN Image ON Bil.Vognnummer = Image.Vognnummer " +
+                "LEFT JOIN StatusLK ON Lejekontrakt.StatusID = StatusLK.StatusID " +
+                "WHERE Lejekontrakt.LejekontraktID LIKE ? " +
+                "   OR Bil.Vognnummer LIKE ? " +
+                "   OR Kunde.Navn LIKE ? " +
+                "   OR StatusLK.StatusNavn LIKE ?";
 
-
-        jdbcTemplate.update(sql,
-                lejekontrakt.getLejekontraktID(),
-                lejekontrakt.getStartDato(),
-                lejekontrakt.getSlutDato(),
-                lejekontrakt.getPris(),
-                lejekontrakt.getVognnummer(),
-                // Assuming kundeID and statusID are already assigned somewhere in the model
-                lejekontrakt.getKundeNavn(),  // Assuming you need to retrieve KundeID based on name or input it directly
-                lejekontrakt.getStatus());
+        return jdbcTemplate.query(sql, new Object[]{
+                "%" + soegeord + "%", // Matcher LejekontraktID
+                "%" + soegeord + "%", // Matcher Vognnummer
+                "%" + soegeord + "%", // Matcher Navn
+                "%" + soegeord + "%"  // Matcher Status
+        }, new BeanPropertyRowMapper<>(Lejekontrakt.class));
     }
 }
-
