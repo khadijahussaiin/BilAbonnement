@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skaderapport Detaljer</title>
+<!--    <link rel="stylesheet" type="text/css" href="/skadeRapportEnkelt.css">-->
+</head>
+<style>
+    body {
+        background-color: #215a80; /* Blå baggrund */
+        font-family: Arial, sans-serif;
+        color: #333;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+
+    div {
+        background-color: #f0f0f0; /* Grå boks */
+        padding: 20px;
+        border-radius: 8px;
+        border: 1px solid #000000;
+        width: 93%;
+        max-width: 600px;
+    }
+
+    h1 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .btn-opdater, .btn-slet {
+        background-color: #28a745; /* Grøn farve til opdateringsknap */
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-right: 10px;
+        font-size: 16px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s;
+    }
+
+    .btn-slet {
+        background-color: #dc3545; /* Rød farve til sletteknap */
+    }
+
+    .btn-opdater:hover {
+        background-color: #218838; /* Mørkere grøn ved hover */
+    }
+
+    .btn-slet:hover {
+        background-color: #c82333; /* Mørkere rød ved hover */
+    }
+    /*______________________*/
+    .inline-container {
+        display: flex;
+        align-items: center; /* Justerer elementerne lodret centreret */
+    }
+
+    .inline-container p {
+        margin-right: 20px; /* Tilføjer lidt afstand mellem elementerne */
+    }
+
+    .inline-container p:last-child {
+        margin-right: 0; /* Fjerner højre margin fra det sidste element */
+    }
+    /*____________________*/
+</style>
+<body>
+<div>
+    <h1>Skaderapport Detaljer</h1>
+    <div> <!-- <<< FJERNES -->
+        <div class="inline-container">
+            <p>
+                <strong>Dato:</strong>
+                <div style="width: 90px">
+                    <span th:text="${skaderapport.dato}"></span>
+                </div>
+            </p>
+        </div>
+        <div class="inline-container">
+            <p>
+                <strong>Skade ID:</strong>
+                <div style="width: 20px">
+                    <span th:text="${skaderapport.skadeID}"></span>
+                </div>
+            </p>
+            <p style="margin-left: 200px">
+                <strong>Vognnummer:</strong><br>
+                <span th:text="${skaderapport.vognnummer}"></span>
+            </p>
+        </div>
+        <div class="inline-container">
+            OVERKØRTE
+            <p>
+                <strong>Overkørte Kilometer:</strong>
+                <div>
+                    <span th:text="${skaderapport.overkoerteKilometer}"></span>
+                </div>
+            </p>
+        </div>
+        <div class="inline-container">
+            CHECK AF SKADE
+        </div>
+        <div class="inline-container">
+            SKADE BESKRIVELSE
+        </div>
+        <div class="inline-container">
+            PRIS I ALT
+        </div>
+
+
+        <p><strong>Check Af Skade:</strong> <span th:text="${skaderapport.checkAfSkade}"></span></p>
+        <p><strong>Skadebeskrivelse:</strong> <span th:text="${skaderapport.skadeBeskrivelse}"></span></p>
+        <p><strong>Pris I Alt:</strong> <span th:text="${skaderapport.prisIAlt}"></span></p>
+
+        <a th:href="@{'/opdaterSkaderapport/' + ${skaderapport.skadeID}}">
+            <button type="button" class="btn-opdater">Opdater</button>
+        </a>
+        <a th:href="@{'/sletSkaderapport/' + ${skaderapport.skadeID}}" onclick="return confirm('Er du sikker på, at du vil slette denne skaderapport? Denne handling kan ikke fortrydes.');">
+            <button type="button" class="btn-slet">Slet</button>
+        </a>
+    </div>
+</div>
+</body>
+</html>

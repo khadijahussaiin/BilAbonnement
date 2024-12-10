@@ -25,10 +25,18 @@ public class SkaderapportController {
         model.addAttribute("skaderapporter", skaderapporter);
         return "home/SkaderapportAdministration"; // HTML-filen, der viser skaderapporter
     }
+
+    @GetMapping("/skaderapportDetaljer/{id}")
+    public String visSkaderapportDetaljer(@PathVariable int id, Model model) {
+        Skaderapport skaderapport = skaderapportService.getSkaderapportById(id);
+        model.addAttribute("skaderapport", skaderapport);
+        return "home/skaderapportDetaljer";
+    }
+
     // 2. Vis formular til oprettelse af ny skaderapport
     @GetMapping("/opretSkaderapport")
     public String visOpretSkaderapport() {
-        return "home/opretSkaderapport"; // HTML-fil til oprettelse af skaderapport
+        return "OpretSkaderapport"; // HTML-fil til oprettelse af skaderapport
     }
 
     // Gem en ny skaderapport
