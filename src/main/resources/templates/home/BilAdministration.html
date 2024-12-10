@@ -6,6 +6,7 @@
     <title>Biladministration</title>
     <link rel="stylesheet" type="text/css" href="/bannerItems.css">
     <link rel="stylesheet" type="text/css" href="/sidebarItems.css">
+    <link rel="stylesheet" type="text/css" href="/biladministration.css">
 </head>
 <body>
 <div>
@@ -17,54 +18,44 @@
         <div th:replace="~{home/fragments/bannersidebar :: menu-icon}"></div>
 
         <!-- Indhold på højre side -->
-        <div class="right-side-content">
+        <div>
             <main>
-                <form action="/searchBil" method="get" style="margin-bottom: 20px;">
-                    <label for="searchTerm">Søg efter bil:</label>
-                    <input type="text" id="searchTerm" name="searchTerm" placeholder="Indtast vognnummer, mærke eller tilstand" th:value="${searchTerm}">
+                <form action="/searchBil" method="get" class="search-form">
+                    <input type="text" id="searchTerm" name="searchTerm" placeholder="Søg efter vognnummer, mærke eller tilstand">
                     <button type="submit">Søg</button>
                 </form>
-                <a th:href="@{/opretBil}" class="btn-opret">Opret ny Bil</a>
-                <table>
-                    <thead>
-                    <tr>
-                        <th>Vognnummer</th>
-                        <th>Mærke</th>
-                        <th>Stelnummer</th>
-                        <th>Model</th>
-                        <th>Stålpris</th>
-                        <th>RegAfgift</th>
-                        <th>CO2 Udledning</th>
-                        <th>GearType</th>
-                        <th>Tilstand</th>
-                        <th>Billede</th>
-                        <th>Handling</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr th:each="bil : ${biler}">
-                        <td th:text="${bil.vognnummer}"></td>
-                        <td th:text="${bil.maerke}"></td>
-                        <td th:text="${bil.stelnummer}"></td>
-                        <td th:text="${bil.model}"></td>
-                        <td th:text="${bil.staalpris}"></td>
-                        <td th:text="${bil.regAfgift}"></td>
-                        <td th:text="${bil.co2Udledning}"></td>
-                        <td th:text="${bil.gearType}"></td>
-                        <td th:text="${bil.tilstandNavn}"></td>
-                        <td><img th:src="${bil.imageurl}" alt="Billede af bil" width="100"></td>
-                        <td>
-                            <a th:href="@{'/opdaterBil/'+${bil.vognnummer}}">
-                                <button class="btn-opdaterBil" id="btn-opdaterbil">Opdater</button>
-                            </a>
-                            <a th:href="@{'/sletBil/'+${bil.vognnummer}}" onclick="return confirm('Er du sikker på, at du vil slette denne kontrakt? \n'+
-                            'Denne handling kan ikke fortrydes.');">
-                                <button type="button" class="btn-slet">Slet</button>
-                            </a>
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
+                    <a th:href="@{/opretBil}" class="btn-opret">Opret ny Bil</a>
+
+                    <div class="car-list">
+                        <div th:each="bil : ${biler}" class="car-box" th:classappend="${bil.tilstandNavn == 'Lejeklar' ? 'green-box' : (bil.tilstandNavn == 'Udlejet' ? 'yellow-box' : 'red-box')}">
+                            <img th:src="${bil.imageurl}" alt="Billede af bil" class="car-image">
+                            <div class="car-details">
+                                <div>
+                                    <span><strong>Vognnummer:</strong> <span th:text="${bil.vognnummer}"></span></span>
+                                    <span><strong>Mærke:</strong> <span th:text="${bil.maerke}"></span></span>
+                                </div>
+                                <div>
+                                    <span><strong>Stelnummer:</strong> <span th:text="${bil.stelnummer}"></span></span>
+                                    <span><strong>Model:</strong> <span th:text="${bil.model}"></span></span>
+                                </div>
+                                <div>
+                                    <span><strong>Stålpris:</strong> <span th:text="${bil.staalpris}"></span></span>
+                                    <span><strong>RegAfgift:</strong> <span th:text="${bil.regAfgift}"></span></span>
+                                </div>
+                                <div>
+                                    <span><strong>CO2 Udledning:</strong> <span th:text="${bil.co2Udledning}"></span></span>
+                                    <span><strong>GearType:</strong> <span th:text="${bil.gearType}"></span></span>
+                                </div>
+                                <div>
+                                    <span><strong>Tilstand:</strong> <span th:text="${bil.tilstandNavn}"></span></span>
+                                </div>
+                            </div>
+                            <div class="car-actions">
+                                <a th:href="@{'/opdaterBil/'+${bil.vognnummer}}" class="btn-opdater">Opdater</a>
+                                <a th:href="@{'/sletBil/'+${bil.vognnummer}}" onclick="return confirm('Er du sikker på, at du vil slette denne bil?');" class="btn-slet">Slet</a>
+                            </div>
+                        </div>
+                    </div>
             </main>
         </div>
     </div>
