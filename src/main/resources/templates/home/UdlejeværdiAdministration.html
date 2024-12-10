@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="/bannerItems.css">
     <link rel="stylesheet" type="text/css" href="/sidebarItems.css">
-    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="/UdlejeværdiAdmin.css">
+    <title>Aktiv Biloversigt</title>
 </head>
 <body>
 <div>
@@ -16,23 +17,25 @@
         <div th:replace="~{home/fragments/bannersidebar :: menu-icon}"></div>
 
         <!-- Indhold på højre side -->
-        <div class="right-side-content">
+        <div style="max-width: 100%;" class="right-side-content">
             <!-- Her kan du placere mere indhold af sidens elementer. -->
             <main>
-                <div>Der er <span th:text="${antalAktive}">0</span> biler som er udlejet og har i alt <span th:text="${sumAfPriser}">0</span> DKK</div>
+                <div class="div1"><h3>Der er <span th:text="${antalAktive}">0</span> biler som er udlejet<br>og har i alt <span th:text="${sumAfPriser}">0</span> DKK</h3></div>
                 <div>
-                    <table>
+                    <table class="udlejeVærdi">
                         <thead>
                         <tr>
-                            <th>Aktivt udlejet</th>
-                            <th>Vognnummer</th>
-                            <th>Beløb i alt</th>
+                            <th>Aktiv udlejet:</th>
+                            <th>Vognnummer:</th>
+                            <th>Beløb i alt:</th>
                         </tr>
                         </thead>
                         <tbody>
                         <tr th:each="info : ${lejekontrakter}" th:if="${info.status} == 'Aktiv'">
-                            <td th:text="${info.startDato}"></td>
-                            <td th:text="${info.slutDato}"></td>
+                            <td>
+                                <span th:text="${info.startDato + ' -'}"></span><br>
+                                <span th:text="${info.slutDato}"></span>
+                            </td>
                             <td th:text="${info.vognnummer}"></td>
                             <td th:text="${info.pris}"></td>
                         </tr>

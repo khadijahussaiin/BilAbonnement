@@ -1,0 +1,67 @@
+/* Overskrift */
+.div1 {
+    font-size: 1.5em; /* Gør teksten større */
+    color: #ffffff; /* Hvid tekstfarve for kontrast */
+    background: linear-gradient(60deg, #215a80, rgb(102, 165, 200)); /* Blå gradient baggrund */
+    padding: 20px; /* Tilføjer lidt luft omkring teksten */
+    border-radius: 10px; /* Runde hjørner for et blødere look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Blød skygge for dybde */
+    text-align: center; /* Centrer tekst */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* En moderne skrifttype */
+    margin: 20px;
+}
+
+.div1 h3 {
+    margin: 0; /* Fjern margin fra h3 for ensartethed */
+}
+
+.div1 span {
+    font-weight: bold; /* Gør talene fed for at fremhæve dem */
+}
+
+/* Tabellen */
+.udlejeVærdi {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-collapse: separate; /* Ændret fra collapse til separate */
+    border-spacing: 0; /* Sørg for, at der ikke er mellemrum mellem cellerne */
+    width: 100%;
+    margin: 20px 0;
+    box-shadow: 10px 8px 12px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    overflow: hidden;
+    border: none; /* Ingen kantlinje omkring tabellen */
+}
+
+/* Tabellens header */
+.udlejeVærdi th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background: linear-gradient(30deg, #004c98, rgb(44, 122, 177));
+    color: white;
+    border-bottom: 1px solid #dfe6e9; /* Kun kantlinje under header */
+}
+
+/* plads til tekst indeni og linjer det fraskiller indhold fra hinanden. */
+.udlejeVærdi th, .udlejeVærdi td {
+    border-left: 0.5px solid #dfe6e9; /* Kantlinjer mellem cellerne */
+    border-right: 0.5px solid #dfe6e9;
+    padding: 12px;
+    transition: background-color 0.3s ease;
+}
+
+.udlejeVærdi td {
+    border-bottom: 1px solid #dfe6e9; /* Kantlinje under hver række */
+}
+
+.udlejeVærdi tr:nth-child(odd) {
+    background-color: #54b5e6;
+}
+
+.udlejeVærdi tr:nth-child(even) {
+    background-color: #0796df;
+}
+
+.udlejeVærdi tr:hover {
+    background-color: rgba(166, 0, 0, 0.33);
+}
