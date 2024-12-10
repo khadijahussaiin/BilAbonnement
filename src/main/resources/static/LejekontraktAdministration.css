@@ -3,23 +3,22 @@ a {
 }
 
 table {
-    width: 100%;
+    width: 200%;
     border-collapse: collapse;
     margin: 20px 0;
     background: #fff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     border-radius: 10px; /* Runde hjørner */
-    overflow: hidden; /* Bevar runde hjørner *
+    overflow: hidden;
 }
 
 table th, table td {
-    /*text-align: left;*/
     padding: 12px;
-    border: 1px solid #ddd;
+    border: 1px solid #e6e6e6;
 }
 
 table th {
-    background: #c0c0c0;
+    background: #adacad;
     color: #000000;
 }
 
@@ -36,11 +35,11 @@ td:nth-child(10) {
     font-weight: bold;
 }
 
-td:nth-child(10):has(span:contains("Aktiv")) {
+td:nth-child(10):has(span:contains ("Aktiv")) {
     color: #28a745; /* Grøn */;
 }
 
-td:nth-child(10):contains("Afsluttet") {
+td:nth-child(10):contains ("Afsluttet") {
     color: #6c757d;
 }
 
@@ -51,10 +50,12 @@ button {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    background: #d6b438;
+    color: white;
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #a68e30;
     color: white;
 }
 
@@ -69,7 +70,7 @@ button:hover {
 
 .btn-opret {
     display: inline-block;
-    background: #28a745;
+    background: #28853b;
     color: white;
     padding: 10px 20px;
     border-radius: 5px;
