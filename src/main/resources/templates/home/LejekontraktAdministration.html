@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<html lang="da">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lejekontrakt Administration</title>
     <link rel="stylesheet" type="text/css" href="/bannerItems.css">
     <link rel="stylesheet" type="text/css" href="/sidebarItems.css">
+    <link rel="stylesheet" type="text/css" href="/LejekontraktAdministration.css">
+    <!-- Her sætter man sidens egen CSS ind ligesom ovenstående links. -->
+    <title>Prototype</title>
 </head>
 <body>
 <div>
     <!-- Banner -->
-    <div th:replace="~{home/fragments/bannersidebar :: banner('Lejekontrakt Administation')}"></div>
+    <div th:replace="~{home/fragments/bannersidebar :: banner('Lejekontrakt Administration')}"></div>
 
     <!-- Menu Ikon og Dropdown -->
     <div class="menu-container">
@@ -18,7 +19,7 @@
 
         <!-- Indhold på højre side -->
         <div class="right-side-content">
-            <main>
+            <div>
                 <form action="/soegLejekontrakter" method="get">
                     <label for="soegeord">Søg:</label>
                     <input type="text" id="soegeord" name="soegeord" placeholder="Indtast ID, vognnummer, navn eller status">
@@ -66,7 +67,7 @@
                     </tr>
                     </tbody>
                 </table>
-            </main>
+            </div>
         </div>
     </div>
 </div>

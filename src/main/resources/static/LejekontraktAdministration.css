@@ -1,47 +1,111 @@
-/* Generel styling for body og layout */
-body {
-    display: flex;
-    margin: 0;
-    font-family: Arial, sans-serif;
+a {
+    text-decoration: none;
 }
 
-/* Sidebar menu */
-.menu-container1 {
-    width: 250px; /* Fast bredde til sidebar */
-    flex-shrink: 0;
-}
-
-/* Styling af tabel */
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px; /* Lidt afstand fra andre elementer */
+    margin: 20px 0;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 10px; /* Runde hjørner */
+    overflow: hidden; /* Bevar runde hjørner *
 }
 
-th, td {
-    padding: 10px;
-    border: 1px solid #ccc;
-    text-align: left;
+table th, table td {
+    /*text-align: left;*/
+    padding: 12px;
+    border: 1px solid #ddd;
 }
 
-th {
-    background-color: #f2f2f2;
+table th {
+    background: #c0c0c0;
+    color: #000000;
 }
 
-/* Styling af knapper */
-.btn-opret, .btn-opdater, .btn-slet {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Status styling */
+td:nth-child(10) {
+    font-weight: bold;
+}
+
+td:nth-child(10):has(span:contains("Aktiv")) {
+    color: #28a745; /* Grøn */;
+}
+
+td:nth-child(10):contains("Afsluttet") {
+    color: #6c757d;
+}
+
+/* Buttons */
+button {
     padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
-    margin: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+    color: white;
 }
 
 .btn-slet {
-    background-color: #f44336;
+    background: #dc3545;
+    color: white;
+}
+
+.btn-slet:hover {
+    background: #c82333;
 }
 
 .btn-opret {
-    margin-bottom: 20px; /* Lidt afstand til nedenstående tabel */
+    display: inline-block;
+    background: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+.btn-opret:hover {
+    background: #218838;
+}
+
+/* Input fields */
+input[type="text"] {
+    padding: 10px;
+    width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin-top: 15px; /* Andring: Flytter søgefeltet lidt ned */
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+label {
+    font-weight: bold;
+}
+
+button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    border-radius: 10px; /* Ændring: Runde hjørner */
+    margin-top: 15px; /* Ændring; Matcher søgefeltet */
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
 }
