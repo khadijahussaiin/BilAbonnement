@@ -55,13 +55,13 @@
 }
 
 .udlejeVærdi tr:nth-child(odd) {
-    background-color: #54b5e6;
+    background-color: #ececec;
 }
 
 .udlejeVærdi tr:nth-child(even) {
-    background-color: #0796df;
+    background-color: #e4e4e4;
 }
 
 .udlejeVærdi tr:hover {
-    background-color: rgba(166, 0, 0, 0.33);
+    background-color: rgb(126, 182, 227);
 }

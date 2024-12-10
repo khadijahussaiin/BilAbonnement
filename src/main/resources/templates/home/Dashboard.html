@@ -19,70 +19,64 @@
 
             <!-- Indhold på højre side -->
             <div class="right-side-content">
-                <!-- Her kan du placere mere indhold af sidens elementer.
-                For at tilføje flere ting ved siden af hver content skal man bruge ny main. -->
-                <main>
-                    <!-- Opslag -->
-                    <section class="dashboardOpslag">
-                        <h1>Ledelse opslag:</h1>
-                        <div class="centered-content">
-                            <img class="UserBillede" src="/Pictures/profilIconPicture.png">
-                            <h3 style="margin-top: 20px"> Paul Paulsen </h3>
-                        </div>
-                        <!-- Her kan du tilføje dine opslag -->
-                        <p>
-                            <strong>
-                                ARBEJDE, ARBEJDE, ARBEJDE!
-                            </strong>
-                            <br>
-                            Vi har en masse at lave i denne uge, vi skal vise de andre konkurrenter at vi er de bedste i Danmark!
-
-                        </p>
-                    </section>
-                    <section class="dashboardOpslag">
-                        <h1>Teamet opslag:</h1>
-                        <div class="centered-content">
-                            <img class="UserBillede" src="/Pictures/profilIconPicture.png">
-                            <h3 style="margin-top: 20px"> Lars Ulriksen </h3>
-                        </div>
-                        <!-- Her kan du tilføje dine opslag -->
-                        <p>
-                            Vi har en masse at arbejde med i denne uge.
-                            Vi skal rydde op i papirer fra sidst uge
-                            og registre dem i databasen med vores nyt system.
-                            <br>
-                            <strong>
-                                Vi har bytur på Lørdag den 21 december! KOM MED!
-                            </strong>
-                        </p>
-                    </section>
-                </main>
-                <!-- Her kan du placere mere indhold af sidens elementer. -->
+            <!-- Her kan du placere mere indhold af sidens elementer.
+            For at tilføje flere ting ved siden af hver content skal man bruge ny main. -->
+                <!-- Opslag -->
+                <section class="dashboardOpslag">
+                    <h1>Ledelse opslag:</h1>
+                    <div class="centered-content">
+                        <img class="UserBillede" src="/Pictures/profilIconPicture.png">
+                        <h3 style="margin-top: 20px"> Paul Paulsen </h3>
+                    </div>
+                    <!-- Her kan du tilføje dine opslag -->
+                    <p>
+                        <strong>
+                            ARBEJDE, ARBEJDE, ARBEJDE!
+                        </strong>
+                        <br>
+                        Vi har en masse at lave i denne uge, vi skal vise de andre konkurrenter at vi er de bedste i Danmark!
+                    </p>
+                </section>
+                <section class="dashboardOpslag">
+                    <h1>Teamet opslag:</h1>
+                    <div class="centered-content">
+                        <img class="UserBillede" src="/Pictures/profilIconPicture.png">
+                        <h3 style="margin-top: 20px"> Lars Ulriksen </h3>
+                    </div>
+                    <!-- Her kan du tilføje dine opslag -->
+                    <p>
+                        Vi har en masse at arbejde med i denne uge.
+                        Vi skal rydde op i papirer fra sidst uge
+                        og registre dem i databasen med vores nyt system.
+                        <br>
+                        <strong>
+                            Vi har bytur på Lørdag den 21 december! KOM MED!
+                        </strong>
+                    </p>
+                </section>
+            <!-- Her kan du placere mere indhold af sidens elementer. -->
             </div>
             <div class="left-side-content">
-                <main>
-                    <!-- Kalender -->
-                    <section class="bodyKalender">
-                        <div>
-                            <h2>Kalender</h2>
-                        </div>
-                    </section>
-                    <section class="bodyKalender">
-                        <div class="calendar-container">
-                            <h1 class="head1">Dagens Dato</h1>
-                            <p class="p1" th:text="${currentDate}"></p>
-                        </div>
-                    </section>
-                    <section class="bodyKalender">
-                        <div>
-                            <p>
-                                Dette er et eksempel på et Kalender.
-                                (JAVASCRIPT KRÆVET HER for at vise en kalender, det highlighted dag.)
-                            </p>
-
-                        </div>
-                    </section>
-                </main>
+                <!-- Kalender -->
+                <section class="bodyKalender">
+                    <div>
+                        <h2>Kalender</h2>
+                    </div>
+                </section>
+                <section class="bodyKalender">
+                    <div class="calendar-container">
+                        <h1 class="head1">Dagens Dato</h1>
+                        <p class="p1" th:text="${currentDate}"></p>
+                    </div>
+                </section>
+                <section class="bodyKalender">
+                    <div>
+                        <p>
+                            Dette er et eksempel på et Kalender.
+                            (JAVASCRIPT KRÆVET HER for at vise en kalender, det highlighted dag.)
+                        </p>
+                    </div>
+                </section>
             </div>
         </div>
     </div>

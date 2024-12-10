@@ -17,32 +17,34 @@
         <div th:replace="~{home/fragments/bannersidebar :: menu-icon}"></div>
 
         <!-- Indhold på højre side -->
-        <div style="max-width: 100%;" class="right-side-content">
+        <div style="margin-left: 20%; width:1000px;">
             <!-- Her kan du placere mere indhold af sidens elementer. -->
-            <main>
-                <div class="div1"><h3>Der er <span th:text="${antalAktive}">0</span> biler som er udlejet<br>og har i alt <span th:text="${sumAfPriser}">0</span> DKK</h3></div>
-                <div>
-                    <table class="udlejeVærdi">
-                        <thead>
-                        <tr>
-                            <th>Aktiv udlejet:</th>
-                            <th>Vognnummer:</th>
-                            <th>Beløb i alt:</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr th:each="info : ${lejekontrakter}" th:if="${info.status} == 'Aktiv'">
-                            <td>
-                                <span th:text="${info.startDato + ' -'}"></span><br>
-                                <span th:text="${info.slutDato}"></span>
-                            </td>
-                            <td th:text="${info.vognnummer}"></td>
-                            <td th:text="${info.pris}"></td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </main>
+            <div class="div1">
+                <h3>Der er <span th:text="${antalAktive}">0</span> biler som er udlejet.</h3>
+                <h3>Totalt beløb: <span th:text="${sumAfPriser}">0</span> DKK</h3>
+            </div>
+            <div>
+                <table class="udlejeVærdi">
+
+                    <thead>
+                    <tr>
+                        <th>Aktiv udlejet:</th>
+                        <th>Vognnummer:</th>
+                        <th>Beløb i alt:</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    <tr th:each="info : ${lejekontrakter}" th:if="${info.status} == 'Aktiv'">
+                        <td>
+                            <span th:text="${info.startDato + ' - ' + info.slutDato}"></span>
+                        </td>
+                        <td th:text="${info.vognnummer}"></td>
+                        <td th:text="${info.pris}"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 </div>

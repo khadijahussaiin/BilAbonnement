@@ -28,6 +28,64 @@
     align-items: center;
 }
 
+
+/*_______Kalender_______*/
+/* Generel styling til kalendersektionen */
+.bodyKalender {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 20px;
+    padding: 20px;
+    background-color: #f7f9fc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling til overskrifter */
+.bodyKalender h2, .bodyKalender h1 {
+    color: #004C99;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Styling til dato */
+.calendar-container {
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.calendar-container .p1 {
+    font-size: 1.2em;
+    color: #333333;
+    margin-top: 5px;
+}
+
+/* Styling til tekst */
+.bodyKalender p {
+    color: #555555;
+    line-height: 1.6;
+    text-align: center;
+    margin-top: 15px;
+}
+
+/* Hover-effekt til kalendercontaineren */
+.calendar-container:hover {
+    box-shadow: 0 4px 8px rgba(0, 76, 153, 0.2);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .bodyKalender {
+        padding: 15px;
+    }
+
+    .calendar-container {
+        padding: 10px;
+    }
+}
+
 /*
 Hvis man bruge id istedet for class, så bruge # istedet for . i css.:
 #dashboardOpslag {
