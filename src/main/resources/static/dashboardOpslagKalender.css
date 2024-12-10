@@ -41,7 +41,7 @@
 }
 
 /* Styling til overskrifter */
-.bodyKalender h2, .bodyKalender h1 {
+.bodyKalender h1 {
     color: #004C99;
     text-align: center;
     margin-bottom: 10px;

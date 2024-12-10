@@ -6,7 +6,9 @@
   <title>Skaderapport</title>
   <link rel="stylesheet" type="text/css" href="/bannerItems.css">
   <link rel="stylesheet" type="text/css" href="/sidebarItems.css">
+  <link rel="stylesheet" type="text/css" href="/SkadeRapportAdmin.css">
 </head>
+
 <body>
 <div>
   <!-- Banner -->
@@ -17,14 +19,14 @@
     <div th:replace="~{home/fragments/bannersidebar :: menu-icon}"></div>
 
     <!-- Indhold på højre side -->
-    <div class="right-side-content">
+    <div>
       <main>
         <form action="/SøgSkaderapport" method="get">
           <input type="text" name="searchTerm" placeholder="Søg efter ID, Vognnummer eller Check Af Skade" th:value="${searchTerm}">
           <button type="submit">Søg</button>
         </form>
         <a th:href="@{/opretSkaderapport}" class="btn-opret">Opret ny Skaderapport</a>
-        <table>
+        <table class="skadeRapportTable">
           <thead>
           <tr>
             <th>Skade ID</th>
@@ -48,7 +50,7 @@
             <td th:text="${skaderapport.prisIAlt}"></td>
             <td>
               <a th:href="@{'/opdaterSkaderapport/' + ${skaderapport.skadeID}}">
-                <button type="button">Opdater</button>
+                <button type="button" class="btn-opdater">Opdater</button>
               </a>
               <a th:href="@{'/sletSkaderapport/' + ${skaderapport.skadeID}}" onclick="return confirm('Er du sikker på, at du vil slette denne skaderapport? \n'+
                             'Denne handling kan ikke fortrydes.');">

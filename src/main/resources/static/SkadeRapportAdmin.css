@@ -1,0 +1,116 @@
+.btn-opdater,
+.btn-slet {
+    flex: 1;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    color: white;
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: #DF3A3A;
+}
+
+.btn-opdater {
+    background-color: #BFB747;
+}
+
+.btn-opdater:hover {
+    background-color: #e6b800;
+}
+
+.btn-slet:hover {
+    background-color: #d7372e;
+}
+
+/* Main Content */
+main {
+    max-width: 1200px; /* Begrænset bredde for bedre visning */
+    width: 100%; /* Responsivt layout */
+}
+
+/* Search Form and Create Button Styling */
+.search-form {
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+    justify-content: center; /* Centrerer søgefelt og knap */
+    align-items: center;
+    margin-right: -200px;
+}
+
+.search-form input {
+    flex: 1;
+    max-width: 500px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.search-form button {
+    padding: 10px 20px;
+    background-color: #215a80;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.search-form button:hover {
+    background-color: #183d5a;
+}
+
+.btn-opret {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #297a2a;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+    text-align: center;
+    margin: 10px auto;
+    margin-left: 80px;
+}
+
+.btn-opret:hover {
+    background-color: #5492a9;
+}
+
+/* Tabellen */
+.skadeRapportTable {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-collapse: separate; /* Ændret fra collapse til separate */
+    border-spacing: 0; /* Sørg for, at der ikke er mellemrum mellem cellerne */
+    width: 100%;
+    margin: 20px 0;
+    box-shadow: 10px 8px 12px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    overflow: hidden;
+    border: none; /* Ingen kantlinje omkring tabellen */
+}
+
+/* Tabellens header */
+.skadeRapportTable th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background: linear-gradient(30deg, #454545, rgb(128, 128, 128));
+    color: white;
+}
+
+/* plads til tekst indeni og linjer det fraskiller indhold fra hinanden. */
+.skadeRapportTable th, .skadeRapportTable td {
+    padding: 12px;
+    transition: background-color 0.3s ease;
+}
+
+.skadeRapportTable tr:nth-child(odd) {
+    background-color: #ececec;
+}
+
+.skadeRapportTable tr:nth-child(even) {
+    background-color: #e4e4e4;
+}
