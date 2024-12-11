@@ -2,38 +2,60 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
   <title>Opret Lejekontrakt</title>
+  <link rel="stylesheet" type="text/css" href="OpretLejekontrakt.css">
 </head>
 <body>
-<h1>Opret Ny Lejekontrakt</h1>
-<form action="/OpretLejekontrakt" method="post">
-  <label for="startDato">Start Dato:</label>
-  <input type="date" id="startDato" name="startDato" required><br>
+<div class="header">
+  <h1>Opret Ny Lejekontrakt</h1>
+</div>
+<div id="background-container">
+<div class="container">
+  <form action="/OpretLejekontrakt" method="post" class="contract-form">
+    <div class="form-group">
+      <label for="startDato">Start Dato:</label>
+      <input type="date" id="startDato" name="startDato" required>
+    </div>
 
-  <label for="slutDato">Slut Dato:</label>
-  <input type="date" id="slutDato" name="slutDato" required><br>
+    <div class="form-group">
+      <label for="slutDato">Slut Dato:</label>
+      <input type="date" id="slutDato" name="slutDato" required>
+    </div>
 
-  <label for="pris">Pris:</label>
-  <input type="number" id="pris" name="pris" step="0.01" required><br>
+    <div class="form-group">
+      <label for="pris">Pris:</label>
+      <input type="number" id="pris" name="pris" step="0.01" required>
+    </div>
 
-  <label for="vognnummer">Vognnummer:</label>
-  <input type="text" id="vognnummer" name="vognnummer" required><br>
+    <div class="form-group">
+      <label for="vognnummer">Vognnummer:</label>
+      <input type="text" id="vognnummer" name="vognnummer" required>
+    </div>
 
-  <label for="navn">Navn:</label>
-  <input type="text" id="navn" name="navn" required><br>
+    <div class="form-group">
+      <label for="navn">Navn:</label>
+      <input type="text" id="navn" name="navn" required>
+    </div>
 
-  <label for="email">Email:</label>
-  <input type="email" id="email" name="email" required><br>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+    </div>
 
-  <label for="telefon">Telefon:</label>
-  <input type="text" id="telefon" name="telefon" required><br>
+    <div class="form-group">
+      <label for="telefon">Telefon:</label>
+      <input type="text" id="telefon" name="telefon" required>
+    </div>
 
-  <label for="statusID">Status:</label>
-  <select id="statusID" name="statusID" required>
-    <option value="1">Aktiv</option>
-    <option value="2">Afsluttet</option>
-  </select><br>
+    <div class="form-group">
+      <label for="statusID">Status:</label>
+      <select id="statusID" name="statusID" required>
+        <option value="1">Aktiv</option>
+        <option value="2">Afsluttet</option>
+      </select>
+    </div>
 
-  <button type="submit">Gem</button>
-</form>
+    <button type="submit" class="submit-button">Gem</button>
+  </form>
+</div></div>
 </body>
 </html>

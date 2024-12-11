@@ -1,0 +1,85 @@
+/* Generel styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('Pictures/Baggrund.png') no-repeat center center fixed;
+    background-size: cover; /* Sørger for at billedet fylder hele baggrunden */
+    color: #333;
+}
+
+.header {
+    background-color: rgba(33, 90, 129, 0.8); /* Gennemsigtigt, så baggrunden kan ses lidt */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 24px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    max-width: 600px;
+    margin: 40px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px); /* Tilføj en let sløringseffekt */
+}
+
+h1 {
+    margin: 0;
+}
+
+.contract-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+    color: #000000;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+input:focus, select:focus {
+    border-color: #1e88e5;
+    box-shadow: 0 0 6px rgba(30, 136, 229, 0.3);
+    outline: none;
+}
+
+button.submit-button {
+    background: linear-gradient(to right, #1e88e5, #42a5f5);
+    color: white;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+button.submit-button:hover {
+    background: linear-gradient(to right, #1565c0, #2196f3);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+button.submit-button {
+    font-size: 14px;
+}
