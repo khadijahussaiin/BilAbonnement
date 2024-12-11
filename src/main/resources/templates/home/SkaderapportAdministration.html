@@ -9,43 +9,45 @@
   <link rel="stylesheet" type="text/css" href="/SkadeRapportAdmin.css">
 </head>
 
-<body>
-<div>
-  <!-- Banner -->
-  <div th:replace="~{home/fragments/bannersidebar :: banner('Skaderapportering Administration')}"></div>
-
-  <!-- Menu Ikon og Dropdown -->
-  <div class="menu-container">
-    <div th:replace="~{home/fragments/bannersidebar :: menu-icon}"></div>
-
+  <body>
     <div>
-      <main>
+      <!-- Banner -->
+      <div th:replace="~{home/fragments/bannersidebar :: banner('Skaderapportering Administration')}">
+      </div>
 
-        <form action="/SøgSkaderapport" method="get">
-          <input type="text" name="searchTerm" placeholder="Søg efter ID, Vognnummer eller Check Af Skade" th:value="${searchTerm}">
-          <button type="submit">Søg</button>
-        </form>
+      <!-- Menu Ikon og Dropdown -->
+      <div class="menu-container">
+        <div th:replace="~{home/fragments/bannersidebar :: menu-icon}">
+        </div>
 
-        <a th:href="@{/opretSkaderapport}" class="btn-opret">Opret ny Skaderapport</a>
+        <main>
 
-        <table class="skadeRapportTable">
-          <thead>
-          <tr>
-            <th>Skade ID</th>
-            <th>Vognnummer</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr th:each="skaderapport : ${skaderapporter}">
-            <td><a th:href="@{/skaderapportDetaljer/{id}(id=${skaderapport.skadeID})}" th:text="${skaderapport.skadeID}"></a></td>
-            <td th:text="${skaderapport.vognnummer}"></td>
-          </tr>
-          </tbody>
-        </table>
+          <form action="/SøgSkaderapport" method="get">
+            <input type="text" name="searchTerm" placeholder="Søg efter ID, Vognnummer eller Check Af Skade" th:value="${searchTerm}">
+            <button type="submit">Søg</button>
+          </form>
 
-      </main>
+          <a th:href="@{/OpretSkaderapport}" class="btn-opret">Opret ny Skaderapport</a>
+
+          <table class="skadeRapportTable">
+            <thead>
+              <tr>
+                <th>Skade ID</th>
+                <th>Vognnummer</th>
+                <th>Vurderes af:</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr th:each="skaderapport : ${skaderapporter}">
+                <td><a th:href="@{/skaderapportDetaljer/{id}(id=${skaderapport.skadeID})}" th:text="${skaderapport.skadeID}"></a></td>
+                <td th:text="${skaderapport.vognnummer}"></td>
+                <td th:text="${skaderapport.checkAfSkade}"></td>
+              </tr>
+            </tbody>
+          </table>
+
+        </main>
+      </div>
     </div>
-  </div>
-</div>
-</body>
+  </body>
 </html>

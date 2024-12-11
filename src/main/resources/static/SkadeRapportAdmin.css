@@ -25,8 +25,10 @@
 
 /* Main Content */
 main {
-    max-width: 1200px; /* Begrænset bredde for bedre visning */
     width: 100%; /* Responsivt layout */
+    margin-left: 100px;
+    margin-top: 20px;
+    margin-right: 100px;
 }
 
 /* Search Form and Create Button Styling */
@@ -72,7 +74,6 @@ main {
     font-size: 14px;
     text-align: center;
     margin: 10px auto;
-    margin-left: 80px;
 }
 
 .btn-opret:hover {
@@ -99,6 +100,10 @@ main {
     text-align: left;
     background: linear-gradient(30deg, #454545, rgb(128, 128, 128));
     color: white;
+}
+
+.skadeRapportTable td, .skadeRapportTable a {
+    font-size: 25px;
 }
 
 /* plads til tekst indeni og linjer det fraskiller indhold fra hinanden. */

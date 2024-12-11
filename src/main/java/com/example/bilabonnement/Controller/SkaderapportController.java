@@ -34,13 +34,13 @@ public class SkaderapportController {
     }
 
     // 2. Vis formular til oprettelse af ny skaderapport
-    @GetMapping("/opretSkaderapport")
+    @GetMapping("/OpretSkaderapport")
     public String visOpretSkaderapport() {
-        return "OpretSkaderapport"; // HTML-fil til oprettelse af skaderapport
+        return "home/OpretSkaderapport"; // HTML-fil til oprettelse af skaderapport
     }
 
     // Gem en ny skaderapport
-    @PostMapping("/opretSkaderapport")
+    @PostMapping("/OpretSkaderapport")
     public String gemSkaderapport(@RequestParam String vognnummer,
                                   @RequestParam String dato,
                                   @RequestParam double overkoerteKilometer,

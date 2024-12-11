@@ -10,7 +10,7 @@
     body {
         background-color: #215a80; /* Blå baggrund */
         font-family: Arial, sans-serif;
-        color: #333;
+        color: #ffffff;
         margin: 0;
         padding: 0;
         display: flex;
@@ -20,17 +20,23 @@
     }
 
     div {
-        background-color: #f0f0f0; /* Grå boks */
-        padding: 20px;
+        background-color: #b5b3b3; /* Grå boks */
+        padding: 10px;
         border-radius: 8px;
         border: 1px solid #000000;
-        width: 93%;
+        width: 94%;
+        margin-left: 5px;
         max-width: 600px;
     }
 
     h1 {
         text-align: center;
         margin-bottom: 20px;
+    }
+
+    .aBTN {
+        display: inline-block; /* Sikrer, at links opfører sig korrekt */
+        text-decoration: none; /* Fjerner underlinje fra links */
     }
 
     .btn-opdater, .btn-slet {
@@ -71,62 +77,71 @@
         margin-right: 0; /* Fjerner højre margin fra det sidste element */
     }
     /*____________________*/
+
+    .boks {
+        display: block; /* Gør span til en blok for at tage hele linjen */
+        background-color: #ffffff; /* Lys cyan baggrundsfarve */
+        padding: 10px; /* Indvendig afstand for at give plads omkring teksten */
+        border-radius: 4px; /* Afrundede hjørner */
+        margin-top: 5px; /* Afstand fra <strong> teksten ovenfor */
+        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+        color: black;
+    }
 </style>
 <body>
 <div>
     <h1>Skaderapport Detaljer</h1>
-    <div> <!-- <<< FJERNES -->
+
         <div class="inline-container">
             <p>
                 <strong>Dato:</strong>
-                <div style="width: 90px">
-                    <span th:text="${skaderapport.dato}"></span>
-                </div>
+                <br>
+                <span class="boks" th:text="${skaderapport.dato}"></span>
             </p>
         </div>
         <div class="inline-container">
-            <p>
-                <strong>Skade ID:</strong>
-                <div style="width: 20px">
-                    <span th:text="${skaderapport.skadeID}"></span>
-                </div>
+            <p style="width: 275px">
+                <strong style="width: 200px">Skade ID:</strong>
+                <span class="boks" th:text="${skaderapport.skadeID}"></span>
             </p>
-            <p style="margin-left: 200px">
-                <strong>Vognnummer:</strong><br>
-                <span th:text="${skaderapport.vognnummer}"></span>
+            <br>
+            <p style="margin-left: 75px">
+                <strong>Vognnummer:</strong>
+                <span class="boks" th:text="${skaderapport.vognnummer}"></span>
             </p>
         </div>
         <div class="inline-container">
-            OVERKØRTE
             <p>
                 <strong>Overkørte Kilometer:</strong>
-                <div>
-                    <span th:text="${skaderapport.overkoerteKilometer}"></span>
-                </div>
+                <span class="boks" th:text="${skaderapport.overkoerteKilometer}"></span>
             </p>
         </div>
         <div class="inline-container">
-            CHECK AF SKADE
+            <p>
+                <strong>Check Af Skade:</strong>
+                <span class="boks" th:text="${skaderapport.checkAfSkade}"></span>
+            </p>
         </div>
         <div class="inline-container">
-            SKADE BESKRIVELSE
+            <p>
+                <strong>Skadebeskrivelse:</strong>
+                <br>
+                <span class="boks" th:text="${skaderapport.skadeBeskrivelse}"></span>
+            </p>
         </div>
         <div class="inline-container">
-            PRIS I ALT
+            <p>
+                <strong>Pris I Alt:</strong>
+                <span class="boks" th:text="${skaderapport.prisIAlt}"></span>
+            </p>
         </div>
 
-
-        <p><strong>Check Af Skade:</strong> <span th:text="${skaderapport.checkAfSkade}"></span></p>
-        <p><strong>Skadebeskrivelse:</strong> <span th:text="${skaderapport.skadeBeskrivelse}"></span></p>
-        <p><strong>Pris I Alt:</strong> <span th:text="${skaderapport.prisIAlt}"></span></p>
-
-        <a th:href="@{'/opdaterSkaderapport/' + ${skaderapport.skadeID}}">
+        <a class="aBTN" th:href="@{'/opdaterSkaderapport/' + ${skaderapport.skadeID}}">
             <button type="button" class="btn-opdater">Opdater</button>
         </a>
-        <a th:href="@{'/sletSkaderapport/' + ${skaderapport.skadeID}}" onclick="return confirm('Er du sikker på, at du vil slette denne skaderapport? Denne handling kan ikke fortrydes.');">
+        <a class="aBTN" th:href="@{'/sletSkaderapport/' + ${skaderapport.skadeID}}" onclick="return confirm('Er du sikker på, at du vil slette denne skaderapport? Denne handling kan ikke fortrydes.');">
             <button type="button" class="btn-slet">Slet</button>
         </a>
-    </div>
 </div>
 </body>
 </html>
