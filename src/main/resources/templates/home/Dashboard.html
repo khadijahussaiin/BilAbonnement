@@ -1,79 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
     <link rel="stylesheet" type="text/css" href="/bannerItems.css">
     <link rel="stylesheet" type="text/css" href="/sidebarItems.css">
-    <link rel="stylesheet" type="text/css" href="/dashboardOpslagKalender.css">
-    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="/Dashboard.css">
 </head>
 <body>
-    <div>
-        <!-- Banner -->
-        <div th:replace="~{home/fragments/bannersidebar :: banner('Dashboard')}"></div>
+<div>
+    <!-- Banner -->
+    <div th:replace="~{home/fragments/bannersidebar :: banner('Dashboard')}"></div>
 
-        <!-- Menu Ikon og Dropdown -->
-        <div class="menu-container">
-            <div th:replace="~{home/fragments/bannersidebar :: menu-icon}"></div>
-
-            <!-- Indhold på højre side -->
-            <div class="right-side-content">
-            <!-- Her kan du placere mere indhold af sidens elementer.
-            For at tilføje flere ting ved siden af hver content skal man bruge ny main. -->
-                <!-- Opslag -->
-                <section class="dashboardOpslag">
-                    <h1>Ledelse opslag:</h1>
-                    <div class="centered-content">
-                        <img class="UserBillede" src="/Pictures/profilIconPicture.png">
-                        <h3 style="margin-top: 20px"> Paul Paulsen </h3>
-                    </div>
-                    <!-- Her kan du tilføje dine opslag -->
-                    <p>
-                        <strong>
-                            ARBEJDE, ARBEJDE, ARBEJDE!
-                        </strong>
-                        <br>
-                        Vi har en masse at lave i denne uge, vi skal vise de andre konkurrenter at vi er de bedste i Danmark!
-                    </p>
-                </section>
-                <section class="dashboardOpslag">
-                    <h1>Teamet opslag:</h1>
-                    <div class="centered-content">
-                        <img class="UserBillede" src="/Pictures/profilIconPicture.png">
-                        <h3 style="margin-top: 20px"> Lars Ulriksen </h3>
-                    </div>
-                    <!-- Her kan du tilføje dine opslag -->
-                    <p>
-                        Vi har en masse at arbejde med i denne uge.
-                        Vi skal rydde op i papirer fra sidst uge
-                        og registre dem i databasen med vores nyt system.
-                        <br>
-                        <strong>
-                            Vi har bytur på Lørdag den 21 december! KOM MED!
-                        </strong>
-                    </p>
-                </section>
-            <!-- Her kan du placere mere indhold af sidens elementer. -->
-            </div>
-            <div class="left-side-content">
-                <!-- Kalender -->
-                <section class="bodyKalender">
-                    <div>
-                        <h1>Kalender</h1>
-                        <p class="p1" th:text="${currentDate}"></p>
-                    </div>
-                </section>
-                <section class="bodyKalender">
-                    <div>
-                        <p>
-                            Dette er et eksempel på et Kalender.
-                            (JAVASCRIPT KRÆVET HER for at vise en kalender, det highlighted dag.)
-                        </p>
-                    </div>
-                </section>
-            </div>
-        </div>
+    <!-- Menu Ikon og Dropdown -->
+    <div class="menu-container">
+        <div th:replace="~{home/fragments/bannersidebar :: menu-icon}"></div>
     </div>
+</div>
+
+<div class="dashboard-container">
+    <!-- Main Content -->
+    <main class="main-content">
+        <section class="board">
+            <h2>Opslagstavle fra ledelsen</h2>
+            <p>Velkommen til dashboardet. Hold dig opdateret med de seneste nyheder og beskeder fra ledelsen.</p>
+        </section>
+
+        <section class="news">
+            <h2>Nyheder</h2>
+            <article>
+                <h3>Ny funktion lanceret</h3>
+                <p>Vi har netop opdateret systemet med nye features. Tjek dem ud nu!</p>
+            </article>
+            <article>
+                <h3>Planlagt vedligeholdelse</h3>
+                <p>Systemet vil være nede på lørdag fra kl. 22:00 til 04:00.</p>
+            </article>
+        </section>
+
+        <section class="tasks">
+            <h2>Dine Opgaver</h2>
+            <ul>
+                <li>Færdiggør rapporten inden fredag.</li>
+                <li>Planlæg næste teammøde.</li>
+                <li>Opdater kontaktoplysninger i systemet.</li>
+            </ul>
+        </section>
+    </main>
+</div>
 </body>
 </html>
