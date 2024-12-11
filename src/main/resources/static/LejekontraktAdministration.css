@@ -1,7 +1,7 @@
 a {
     text-decoration: none;
 }
-
+/* Table Styling */
 table {
     width: 200%;
     border-collapse: collapse;
@@ -28,6 +28,39 @@ table tr:nth-child(even) {
 
 table tr:hover {
     background-color: #f1f1f1;
+}
+
+/* Search Form and Create Button Styling */
+.search-form {
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+    justify-content: center; /* Centrerer søgefelt og knap */
+    align-items: center;
+    margin-right: -200px;
+}
+
+.search-form input {
+    flex: 1;
+    max-width: 500px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.search-form button {
+    padding: 10px 20px;
+    background-color: #215a80;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.search-form button:hover {
+    background-color: #183d5a;
 }
 
 /* Status styling */
