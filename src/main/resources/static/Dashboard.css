@@ -1,15 +1,16 @@
-/* General Styling */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     color: #333;
-    background-color: #f4f4f9;
+    background-color: #ffffff;
 }
+
 
 h1, h2, h3 {
     color: #2c3e50;
 }
+
 
 ul {
     list-style: none;
@@ -17,24 +18,27 @@ ul {
     margin: 0;
 }
 
+
 a {
     text-decoration: none;
     color: #3498db;
 }
 
+
 a:hover {
     text-decoration: underline;
 }
 
-/* Dashboard Layout */
+
+
 .dashboard-container {
     display: flex;
+    flex-wrap: nowrap;
     min-height: 100vh;
-    padding: 0;
-    background-color: #fff;
 }
 
-/* Sidebar Styling */
+
+
 .sidebar {
     width: 250px;
     background-color: #2c3e50;
@@ -43,9 +47,11 @@ a:hover {
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
 }
 
+
 .sidebar ul li {
     margin: 20px 0;
 }
+
 
 .sidebar ul li a {
     color: white;
@@ -56,28 +62,29 @@ a:hover {
     transition: background-color 0.3s ease;
 }
 
+
 .sidebar ul li a:hover {
     background-color: #34495e;
 }
 
-/* Main Content Styling */
+
+
 .main-content {
     flex: 1;
-    padding: 20px 60px; /* Mere plads omkring indholdet */
-    margin-left: 20px; /* Adskiller menuen og indholdet */
-    max-width: 1200px; /* Begrænser bredde for et flot layout */
-    background-color: #f9f9f9; /* Giver indholdet en lys baggrund */
-    border-radius: 5px; /* Bløde hjørner */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Lægger en let skygge under */
+    padding: 20px;
+    background-color: #fff;
+
 }
+
 
 .main-content section {
     margin-bottom: 30px;
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 5px;
-    background-color: #ffffff;
+    background-color: #fafafa;
 }
+
 
 .main-content section h2 {
     border-bottom: 2px solid #3498db;
@@ -86,20 +93,24 @@ a:hover {
     font-size: 1.5em;
 }
 
+
 .main-content section p, .main-content section ul li {
     font-size: 1em;
     line-height: 1.6;
 }
 
+
 .main-content section ul {
     padding-left: 20px;
 }
+
 
 .main-content section ul li {
     margin-bottom: 10px;
 }
 
-/* Task and News Article Styling */
+
+
 .news article {
     margin-bottom: 15px;
     padding: 15px;
@@ -108,64 +119,27 @@ a:hover {
     background-color: #eef5ff;
 }
 
+
 .news article h3 {
     margin-top: 0;
     font-size: 1.2em;
 }
 
-/* Header Styling */
-header {
-    background-color: #2c3e50;
-    color: white;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
 
-header h1 {
-    font-size: 1.8em;
-    margin: 0;
-}
 
-header .user-actions {
-    display: flex;
-    align-items: center;
-}
-
-header .user-actions img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    margin-right: 10px;
-}
-
-header .user-actions button {
-    background-color: #3498db;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-header .user-actions button:hover {
-    background-color: #2980b9;
-}
-
-/* Responsive Design */
 @media (max-width: 768px) {
     .dashboard-container {
         flex-direction: column;
     }
+
 
     .sidebar {
         width: 100%;
         box-shadow: none;
     }
 
+
     .main-content {
-        margin-left: 0; /* Fjern margin på små skærme */
         box-shadow: none;
     }
 }
