@@ -2,44 +2,67 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Opdater Bil</title>
+    <link rel="stylesheet" href="/OpdaterBil.css">
 </head>
 <body>
-<h1>Opdater Bil</h1>
-<form action="/opdaterBil" method="post">
-    <input type="hidden" name="vognnummer" th:value="${bil.vognnummer}">
+<div class="container">
+    <!-- Ændret tilbage-knap for at sikre korrekt funktion -->
+    <a th:href="@{/BilAdministration}" class="back--button">&larr;</a>
+    <h1>Opdater Bil</h1>
+    <form action="/opdaterBil" method="post">
+        <input type="hidden" name="vognnummer" th:value="${bil.vognnummer}">
 
-    <label for="maerke">Mærke:</label>
-    <input type="text" id="maerke" name="maerke" th:value="${bil.maerke}" required><br>
+        <div class="form-group">
+            <label for="maerke">Mærke:</label>
+            <input type="text" id="maerke" name="maerke" th:value="${bil.maerke}" required>
+        </div>
 
-    <label for="stelnummer">Stelnummer:</label>
-    <input type="text" id="stelnummer" name="stelnummer" th:value="${bil.stelnummer}" required><br>
+        <div class="form-group">
+            <label for="stelnummer">Stelnummer:</label>
+            <input type="text" id="stelnummer" name="stelnummer" th:value="${bil.stelnummer}" required>
+        </div>
 
-    <label for="model">Model:</label>
-    <input type="number" id="model" name="model" th:value="${bil.model}" required><br>
+        <div class="form-group">
+            <label for="model">Model:</label>
+            <input type="number" id="model" name="model" th:value="${bil.model}" required>
+        </div>
 
-    <label for="staalpris">Stålpris:</label>
-    <input type="number" id="staalpris" name="staalpris" step="0.01" th:value="${bil.staalpris}" required><br>
+        <div class="form-group">
+            <label for="staalpris">Stålpris:</label>
+            <input type="number" id="staalpris" name="staalpris" step="0.01" th:value="${bil.staalpris}" required>
+        </div>
 
-    <label for="regAfgift">Registreringsafgift:</label>
-    <input type="number" id="regAfgift" name="regAfgift" step="0.01" th:value="${bil.regAfgift}" required><br>
+        <div class="form-group">
+            <label for="regAfgift">Registreringsafgift:</label>
+            <input type="number" id="regAfgift" name="regAfgift" step="0.01" th:value="${bil.regAfgift}" required>
+        </div>
 
-    <label for="co2Udledning">CO2 Udledning:</label>
-    <input type="number" id="co2Udledning" name="co2Udledning" step="0.01" th:value="${bil.co2Udledning}" required><br>
+        <div class="form-group">
+            <label for="co2Udledning">CO2 Udledning:</label>
+            <input type="number" id="co2Udledning" name="co2Udledning" step="0.01" th:value="${bil.co2Udledning}" required>
+        </div>
 
-    <label for="gearType">Gear Type:</label>
-    <input type="text" id="gearType" name="gearType" th:value="${bil.gearType}" required><br>
+        <div class="form-group">
+            <label for="gearType">Gear Type:</label>
+            <input type="text" id="gearType" name="gearType" th:value="${bil.gearType}" required>
+        </div>
 
-    <label for="tilstandID">Tilstand:</label>
-    <select id="tilstandID" name="tilstandID" required>
-        <option value="1" th:selected="${bil.tilstandNavn == 'Lejeklar'}">Lejeklar</option>
-        <option value="2" th:selected="${bil.tilstandNavn == 'Udlejet'}">Udlejet</option>
-        <option value="3" th:selected="${bil.tilstandNavn == 'Skadet'}">Skadet</option>
-    </select><br>
+        <div class="form-group">
+            <label for="tilstandID">Tilstand:</label>
+            <select id="tilstandID" name="tilstandID" required>
+                <option value="1" th:selected="${bil.tilstandNavn == 'Lejeklar'}">Lejeklar</option>
+                <option value="2" th:selected="${bil.tilstandNavn == 'Udlejet'}">Udlejet</option>
+                <option value="3" th:selected="${bil.tilstandNavn == 'Skadet'}">Skadet</option>
+            </select>
+        </div>
 
-    <label for="imageUrl">Image URL:</label>
-    <input type="url" id="imageUrl" name="imageUrl" th:value="${bil.imageurl}" required><br>
+        <div class="form-group">
+            <label for="imageUrl">Image URL:</label>
+            <input type="url" id="imageUrl" name="imageUrl" th:value="${bil.imageurl}" required>
+        </div>
 
-    <button type="submit">Gem</button>
-</form>
+        <button type="submit" class="btn">Gem</button>
+    </form>
+</div>
 </body>
 </html>
