@@ -7,19 +7,19 @@
     <link rel="stylesheet" type="text/css" href="/bannerItems.css">
     <link rel="stylesheet" type="text/css" href="/sidebarItems.css">
     <link rel="stylesheet" type="text/css" href="/Dashboard.css">
+
 </head>
 <body>
 <div>
     <!-- Banner -->
-    <div th:replace="~{home/fragments/bannersidebar :: banner('Dashboard')}"></div>
+    <div th:replace="~{home/fragments/bannersidebar :: banner('Bil Administration')}"></div>
 
     <!-- Menu Ikon og Dropdown -->
     <div class="menu-container">
         <div th:replace="~{home/fragments/bannersidebar :: menu-icon}"></div>
-    </div>
-</div>
 
-<div class="dashboard-container">
+        <!-- Indhold på højre side -->
+        <div>
     <!-- Main Content -->
     <main class="main-content">
         <section class="board">
