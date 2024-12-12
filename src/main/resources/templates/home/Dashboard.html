@@ -7,7 +7,6 @@
     <link rel="stylesheet" type="text/css" href="/bannerItems.css">
     <link rel="stylesheet" type="text/css" href="/sidebarItems.css">
     <link rel="stylesheet" type="text/css" href="/Dashboard.css">
-
 </head>
 <body>
 <div>
@@ -18,43 +17,52 @@
     <div class="menu-container">
         <div th:replace="~{home/fragments/bannersidebar :: menu-icon}"></div>
 
-
-        <div class="content-container">
-
-            <div class="text-content">
-                <main class="main-content">
-                    <section class="board">
-                        <h2>Opslagstavle fra ledelsen</h2>
-                        <p>Velkommen til dashboardet. Hold dig opdateret med de seneste nyheder og beskeder fra ledelsen.</p>
-                    </section>
-
-                    <section class="news">
-                        <h2>Nyheder</h2>
-                        <article>
-                            <h3>Ny funktion lanceret</h3>
-                            <p>Vi har netop opdateret systemet med nye features. Tjek dem ud nu!</p>
-                        </article>
-                        <article>
-                            <h3>Planlagt vedligeholdelse</h3>
-                            <p>Systemet vil være nede på lørdag fra kl. 22:00 til 04:00.</p>
-                        </article>
-                    </section>
-
-                    <section class="tasks">
-                        <h2>Dine Opgaver</h2>
-                        <ul>
-                            <li>Færdiggør rapporten inden fredag.</li>
-                            <li>Planlæg næste teammøde.</li>
-                            <li>Opdater kontaktoplysninger i systemet.</li>
-                        </ul>
-                    </section>
-                </main>
+        <div class="dashboard-container">
+            <!-- Venstre Sidebar -->
+            <div class="left-sidebar">
+                <div class="update-section">
+                    <h3>Seneste opdateringer</h3>
+                    <div class="update">
+                        <h4> Berthe Sofie ramos i <a href="#">Bygning Sec A</a></h4>
+                        <p>  Administrativ møde i Lokale A347 k 14:30  👋<br>Hilse Berthe Sofie ramos v  .</p>
+                    </div>
+                    <div class="update">
+                        <h4>Luigi Mangione i <a href="#"> ADMIN-GKG-K24A - </a></h4>
+                        <p>Hej Alle<br>
+                            Husk at udfyldesevalueringens blanketen  via det tilsendte link i jeres mail .</p>
+                        <p class="reply"><a href="#"> Luigi Mangione: :-)</a></p>
+                    </div>
+                </div>
             </div>
 
+            <!-- Main Content -->
+            <main class="main-content" style="flex: 1;">
+                <section class="board">
+                    <h2>Opslagstavle fra ledelsen</h2>
+                    <p>Velkommen til dashboardet. Hold dig opdateret med de seneste nyheder og beskeder fra ledelsen.</p>
+                </section>
 
-            <div class="image-container">
-                <img src="https://img.freepik.com/premium-photo/illustration-man-woman-standing-car-with-dog-generative-ai_733139-91118.jpg" alt="Man and Woman with Car and Dog">
-            </div>
+                <section class="news">
+                    <h2>Nyheder</h2>
+                    <article>
+                        <h3>Ny funktion lanceret</h3>
+                        <p>Vi har netop opdateret systemet med nye features. Tjek dem ud nu!</p>
+                    </article>
+                    <article>
+                        <h3>Planlagt vedligeholdelse</h3>
+                        <p>Systemet vil være nede på lørdag fra kl. 22:00 til 04:00.</p>
+                    </article>
+                </section>
+
+                <section class="tasks">
+                    <h2>Dine Opgaver</h2>
+                    <ul>
+                        <li>Færdiggør rapporten inden fredag.</li>
+                        <li>Planlæg næste teammøde.</li>
+                        <li>Opdater kontaktoplysninger i systemet.</li>
+                    </ul>
+                </section>
+            </main>
         </div>
     </div>
 </div>
