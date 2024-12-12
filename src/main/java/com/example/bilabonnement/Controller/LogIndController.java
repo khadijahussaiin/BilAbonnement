@@ -20,6 +20,7 @@ public class LogIndController {
     public String showLogIndPage() {
         return "home/LogInd"; // Dette matcher logind.html i templates/home/
     }
+
     @GetMapping("/dashboard")
     public String showLogDashboard(Model model) {
         LocalDate currentDate = LocalDate.now();
