@@ -1,10 +1,12 @@
-/* Generelle styles */
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     color: #333;
-    background-color: #ffffff;
+    background-color: #d5e2f3;
+    
+
 }
 
 h1, h2, h3 {
@@ -19,14 +21,14 @@ ul {
 
 a {
     text-decoration: none;
-    color: #3498db;
+    color: rgba(33, 90, 129, 0.8);
 }
 
 a:hover {
     text-decoration: underline;
 }
 
-/* Dashboard layout */
+
 .dashboard-container {
     display: flex;
     flex-direction: row;
@@ -35,13 +37,13 @@ a:hover {
     box-sizing: border-box;
 }
 
-/* Main content */
+
 .main-content {
     flex: 1;
     padding: 20px;
     background-color: #fff;
     box-sizing: border-box;
-    border: 1px solid #ddd;
+    border: 1px solid #b4ceec;
     border-radius: 5px;
     background-color: #fafafa;
 }
@@ -66,16 +68,16 @@ a:hover {
     line-height: 1.6;
 }
 
-/* Venstre sidebar */
+
 .left-sidebar {
-    width: 300px; /* Fast bredde til sidebaren */
-    margin-right: 20px; /* Mellemrum mellem sidebar og main content */
+    width: 300px;
+    margin-right: 20px;
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 5px;
     background-color: #f9f9f9;
     box-sizing: border-box;
-    flex-shrink: 0; /* Forhindrer sidebar i at blive klemt sammen */
+    flex-shrink: 0;
 }
 
 .update-section h3 {
@@ -104,9 +106,25 @@ a:hover {
     font-size: 1em;
     color: #333;
     line-height: 1.5;
+
 }
 
 .update p.reply a {
     color: #3498db;
     font-style: italic;
 }
+.news article {
+    margin-bottom: 15px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #eef5ff;
+}
+
+
+.news article h3 {
+    margin-top: 0;
+    font-size: 1.2em;
+}
+
+
