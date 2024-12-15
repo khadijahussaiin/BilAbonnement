@@ -1,7 +1,7 @@
 body {
     background-color: #215a80; /* Blå baggrund */
     font-family: Arial, sans-serif;
-    color: #333;
+    color: #ffffff;
     margin: 0;
     padding: 0;
     display: flex;
@@ -11,11 +11,12 @@ body {
 }
 
 div {
-    background-color: #f0f0f0; /* Grå boks */
-    padding: 20px;
+    background-color: #b5b3b3; /* Grå boks */
+    padding: 10px;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 80%;
+    border: 1px solid #5c5c5c;
+    width: 94%;
+    margin-left: 5px;
     max-width: 600px;
 }
 
@@ -24,27 +25,9 @@ h1 {
     margin-bottom: 20px;
 }
 
-p {
-    margin: 10px 0;
-    padding: 10px;
-    background-color: #fff;
-    border-radius: 4px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-}
-
-p span {
-    display: inline-block;
-    margin-left: 10px;
-    font-weight: normal;
-}
-
-p:last-of-type {
-    margin-bottom: 20px;
-}
-
-.line {
-    border-top: 1px solid #ccc;
-    margin: 20px 0;
+.aBTN {
+    display: inline-block; /* Sikrer, at links opfører sig korrekt */
+    text-decoration: none; /* Fjerner underlinje fra links */
 }
 
 .btn-opdater, .btn-slet {
@@ -71,8 +54,27 @@ p:last-of-type {
 .btn-slet:hover {
     background-color: #c82333; /* Mørkere rød ved hover */
 }
+/*______________________*/
+.inline-container {
+    display: flex;
+    align-items: center; /* Justerer elementerne lodret centreret */
+}
 
-.skadeBeskrivelse {
-    height: 100px; /* Større boks til skadebeskrivelse */
-    overflow-y: auto;
+.inline-container p {
+    margin-right: 20px; /* Tilføjer lidt afstand mellem elementerne */
+}
+
+.inline-container p:last-child {
+    margin-right: 0; /* Fjerner højre margin fra det sidste element */
+}
+/*____________________*/
+
+.boks {
+    display: block; /* Gør span til en blok for at tage hele linjen */
+    background-color: #ffffff; /* Lys cyan baggrundsfarve */
+    padding: 10px; /* Indvendig afstand for at give plads omkring teksten */
+    border-radius: 4px; /* Afrundede hjørner */
+    margin-top: 5px; /* Afstand fra <strong> teksten ovenfor */
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+    color: black;
 }

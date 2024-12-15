@@ -4,12 +4,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="/SkadeRapportOpdater.css">
+  <link rel="stylesheet" type="text/css" href="/SkadeRapportOpretAndOpdater.css">
   <title>Opret Ny Skaderapport</title>
 </head>
 <body>
   <div>
-    <h1>Opret Ny Skaderapport</h1>
+      <a th:href="@{/SkaderapportAdministration}" class="back-link">
+        <button class="back-button">&larr;</button>
+      </a>
+      <h1>Opret Ny Skaderapport</h1>
     <form action="/OpretSkaderapport" method="post">
       <label for="vognnummer">Vognnummer:</label>
       <input type="text" id="vognnummer" name="vognnummer" required><br>

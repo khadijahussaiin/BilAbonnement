@@ -14,7 +14,7 @@ div {
     background-color: #b5b3b3; /* Grå boks */
     padding: 20px;
     border-radius: 8px;
-    border: 1px solid #000000;
+    /*border: 1px solid #000000;*/
     width: 94%;
     max-width: 600px;
 }
@@ -53,4 +53,19 @@ button {
 
 button:hover {
     background-color: #218838; /* Mørkere grøn ved hover */
+}
+
+.back-button {
+    background-color: #007bff; /* Blå farve */
+    color: white; /* Tekstfarve */
+    border: none; /* Fjern kant */
+    padding: 10px 15px; /* Juster knapstørrelse */
+    font-size: 1rem; /* Skift skriftstørrelse */
+    border-radius: 4px; /* Runde hjørner */
+    cursor: pointer; /* Gør knappen klikbar */
+    display: inline-block;
+}
+
+.back-button:hover {
+    background-color: #0056b3; /* Mørkere blå ved hover */
 }
