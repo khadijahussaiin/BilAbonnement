@@ -21,20 +21,20 @@ public class SkaderapportService {
     public void createSkaderapport(String vognnummer, String dato, double overkoerteKilometer, String checkAfSkade, String skadeBeskrivelse, double prisIAlt) {
         skaderapportRepository.saveSkaderapport(vognnummer, dato, overkoerteKilometer, checkAfSkade, skadeBeskrivelse, prisIAlt);
     }
-    //3. Service-metode til at hente en specifik skaderapport
+    // 3. Service-metode til at hente en specifik skaderapport
     public Skaderapport getSkaderapportById(int skadeID) {
         return skaderapportRepository.findById(skadeID);
     }
 
-    // Service-metode til at opdatere en skaderapport
+    // 4. Service-metode til at opdatere en skaderapport
     public void updateSkaderapport(int skadeID, String vognnummer, String dato, double overkoerteKilometer, String checkAfSkade, String skadeBeskrivelse, double prisIAlt) {
         skaderapportRepository.updateSkaderapport(skadeID, vognnummer, dato, overkoerteKilometer, checkAfSkade, skadeBeskrivelse, prisIAlt);
     }
-    // 4. Service-metode til at slette en skaderapport
+    // 5. Service-metode til at slette en skaderapport
     public void deleteSkaderapport(int skadeID) {
         skaderapportRepository.deleteById(skadeID);
     }
-    //5.Service-metode til at søge efter skaderapporter baseret på ID, vognnummer eller CheckAfSkade
+    // 6. Service-metode til at søge efter skaderapporter baseret på ID, vognnummer eller CheckAfSkade
     public List<Skaderapport> searchSkaderapport(String searchTerm) {
         return skaderapportRepository.searchByIdOrVognnummerOrCheckAfSkade(searchTerm);
     }
