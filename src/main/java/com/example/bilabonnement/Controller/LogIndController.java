@@ -19,7 +19,7 @@ public class LogIndController {
 
     @GetMapping("/")
     public String showLogIndPage() {
-        return "home/LogInd"; // Dette matcher logind.html i templates/home/
+        return "home/Logind"; // Dette matcher logind.html i templates/home/
     }
 
     @GetMapping("/dashboard")
@@ -37,7 +37,7 @@ public class LogIndController {
             return "redirect:/dashboard"; // Omdiriger til dashboard, hvis login lykkes
         } else {
             model.addAttribute("error", "Ugyldigt brugernavn eller adgangskode.");
-            return "home/LogInd"; // hvis log ind ikke lykkes forbliver man på log ind side og fejlmeddelse dukker op
+            return "home/Logind"; // hvis log ind ikke lykkes forbliver man på log ind side og fejlmeddelse dukker op
         }
     }
 }

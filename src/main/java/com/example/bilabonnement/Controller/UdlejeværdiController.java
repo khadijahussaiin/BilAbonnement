@@ -30,7 +30,7 @@ public class UdlejeværdiController {
         model.addAttribute("antalAktive", stats.get("antalAktive"));
         model.addAttribute("sumAfPriser", stats.get("sumAfPriser"));
 
-        return "/home/UdlejeværdiAdministration";
+        return "home/UdlejeværdiAdministration";
     }
 
 
