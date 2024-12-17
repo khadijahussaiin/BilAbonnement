@@ -5,9 +5,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Map;
-
+// Søren
 @Service
 public class UdlejeværdiService {
+
+
     @Autowired
     UdlejeværdiRepository udlejeVærdiRepo;
 
