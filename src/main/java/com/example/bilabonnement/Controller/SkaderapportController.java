@@ -1,5 +1,5 @@
 package com.example.bilabonnement.Controller;
-
+//Søren og Khadija
 import com.example.bilabonnement.Model.Skaderapport;
 import com.example.bilabonnement.Service.SkaderapportService;
 import org.springframework.beans.factory.annotation.Autowired;

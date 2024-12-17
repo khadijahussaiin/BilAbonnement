@@ -1,5 +1,5 @@
 package com.example.bilabonnement.Model;
-
+//Søren og Khadija
 public class Skaderapport {
     private int skadeID;
     private String vognnummer;

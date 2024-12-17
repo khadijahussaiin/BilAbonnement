@@ -15,16 +15,16 @@ import static org.mockito.Mockito.*;
 
 class LogIndControllerTest {
 
-    @Mock
+    @Mock //En falsk version af UseradministrationService
     private UseradministrationService useradministrationService;
 
     @Mock
     private Model model;
 
-    @InjectMocks
+    @InjectMocks//Put de falske objekter ind i din klasse (dependency injection).
     private LogIndController logIndController;
 
-    @BeforeEach
+    @BeforeEach//Initialiser mocks før hver test for at sikre, at de er klar.
     void setUp() {
         MockitoAnnotations.openMocks(this);
     }

@@ -1,5 +1,5 @@
 package com.example.bilabonnement.Repository;
-
+//Khadija
 import com.example.bilabonnement.Model.Lejekontrakt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;

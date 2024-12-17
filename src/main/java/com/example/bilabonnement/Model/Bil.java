@@ -1,5 +1,5 @@
 package com.example.bilabonnement.Model;
-
+//Bushra og Khadija
 public class Bil {
     private String vognnummer;
     private String maerke;

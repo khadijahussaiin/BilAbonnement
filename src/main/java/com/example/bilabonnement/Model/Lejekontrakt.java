@@ -1,5 +1,5 @@
 package com.example.bilabonnement.Model;
-
+//Khadija
 public class Lejekontrakt {
     private String imageurl;
     private int lejekontraktID;

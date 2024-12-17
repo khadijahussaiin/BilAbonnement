@@ -17,7 +17,7 @@ import static org.mockito.Mockito.*;
 
 class LejekontraktRepositoryTest {
 
-    @Mock
+    @Mock//
     private JdbcTemplate jdbcTemplate;
 
     @InjectMocks

@@ -15,10 +15,10 @@ import static org.mockito.Mockito.*;
 
 class SeBilTest {
 
-    @Mock
+    @Mock //der ikke bruges en rigtig BilRepository, men en "dummy-version" af den.
     private BilRepository bilRepository;
 
-    @InjectMocks
+    @InjectMocks//Gør det muligt at teste bilService uafhængigt af den faktiske repository-implementering
     private BilService bilService;
 
     public SeBilTest() {
@@ -27,7 +27,7 @@ class SeBilTest {
 
     @Test
     void testFindAll() {
-        // Arrange
+        // Arrange: Bilobjekter oprettes
         Bil bil1 = new Bil("AB12345", "Toyota", "ST12345", 2021, 250000.0, 30000.0, 120.0, "Automatisk", "Lejeklar", "https://example.com/image1.jpg");
         Bil bil2 = new Bil("CD67890", "Volkswagen", "ST67890", 2020, 200000.0, 25000.0, 150.0, "Manuel", "Udlejet", "https://example.com/image2.jpg");
         List<Bil> expectedBiler = Arrays.asList(bil1, bil2);
