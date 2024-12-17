@@ -16,6 +16,7 @@ public class LogIndController {
     @Autowired
     private UseradministrationService useradministrationService;
 
+
     @GetMapping("/")
     public String showLogIndPage() {
         return "home/LogInd.html"; // Dette matcher logind.html i templates/home/
