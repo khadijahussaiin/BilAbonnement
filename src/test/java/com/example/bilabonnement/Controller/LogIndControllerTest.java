@@ -34,7 +34,7 @@ class LogIndControllerTest {
         // Act
         String viewName = logIndController.showLogIndPage();
         // Assert
-        assertEquals("home/LogInd", viewName, "Should return the correct view name for login page.");
+        assertEquals("home/LogInd.html", viewName, "Should return the correct view name for login page.");
     }
 
     @Test
