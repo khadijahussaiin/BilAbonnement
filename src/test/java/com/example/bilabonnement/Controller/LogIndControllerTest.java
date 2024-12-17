@@ -34,7 +34,7 @@ class LogIndControllerTest {
         // Act
         String viewName = logIndController.showLogIndPage();
         // Assert
-        assertEquals("home/LogInd", viewName, "Should return the correct view name for login page.");
+        assertEquals("home/Logind", viewName, "Should return the correct view name for login page.");
     }
 
     @Test
@@ -73,7 +73,7 @@ class LogIndControllerTest {
         // Act
         String result = logIndController.processLogin(username, password, model);
         // Assert
-        assertEquals("home/LogInd", result, "Should return to login page for invalid user.");
+        assertEquals("home/Logind", result, "Should return to login page for invalid user.");
         verify(useradministrationService, times(1)).validateUser(username, password);
         verify(model, times(1)).addAttribute("error", "Ugyldigt brugernavn eller adgangskode.");
     }
