@@ -19,7 +19,7 @@ public class LogIndController {
 
     @GetMapping("/")
     public String showLogIndPage() {
-        return "home/LogInd.html"; // Dette matcher logind.html i templates/home/
+        return "home/LogInd"; // Dette matcher logind.html i templates/home/
     }
 
     @GetMapping("/dashboard")
